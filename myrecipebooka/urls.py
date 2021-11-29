@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from recipe_blog.models import Recipe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('home/', RecipeListView.as_view(), name='home')
 ]
