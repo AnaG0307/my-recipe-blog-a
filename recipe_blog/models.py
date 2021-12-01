@@ -14,7 +14,7 @@ class Ingredients(models.Model):
 
     class Meta:
         ordering = ['ingr_name']
-    
+
     def __string__(self):
         return self.ingr_name
 
@@ -37,10 +37,10 @@ class Recipe(models.Model):
 
     class Meta:
         ordering = ['featured', '-created_on']
-    
+
     def __str__(self):
         return self.title
-    
+
     def number_of_likes(self):
         return self.likes.count()
 
@@ -66,7 +66,7 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['created_on']
-    
+
     def __str__(self):
         return self.name
 

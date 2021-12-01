@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
@@ -32,16 +32,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">My Recipe Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Log out</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Register</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -58,8 +58,47 @@
         {% endblock %}
     </main>
 
-    <footer>
-
+    <footer class="footer mt-auto py-3 bg-warning text-dark">
+        <div class="container-fluid text-center text-md-left text-dark">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Ackowledgements</h5>
+                    <p>Thank you to everyone that supported my during the creation of this project</p>
+                </div>
+                <!-- <hr class="clearfix w-100 d-md-none pb-3"> -->
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase text-dark">Follow us</h5>
+                    <p>
+                        <a href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-square ms-3 fa-2x link-dark"></i></a>
+                        <a href="https://twitter.com/"><i class="fab fa-twitter-square ms-3 fa-2x link-dark"></i></a>
+                        <a href="https://www.instagram.com/"><i
+                                class="fab fa-instagram-square ms-3 fa-2x link-dark"></i></a>
+                        <a href="https://www.youtube.com/"><i
+                                class="fab fa-youtube-square ms-3 fa-2x link-dark"></i></a>
+                    </p>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <ul class="list-unstyled link-secondary">
+                        <li>
+                            <a class="link-dark" href="#!">About Us</a>
+                        </li>
+                        <li>
+                            <a class="link-dark" href="#!">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="link-dark" href="#!">Careers</a>
+                        </li>
+                        <li>
+                            <a class="link-dark" href="{% url 'home' %}">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            <p class="m-0 text-center text-dark">Made by Ana Genover © 2021 Copyright</p>
+        </div>
     </footer>
 
 </body>

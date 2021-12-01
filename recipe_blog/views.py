@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from recipe_blog.models import Recipe
+from .models import Recipe
 
 
 class RecipeListView(ListView):
