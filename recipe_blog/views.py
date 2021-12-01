@@ -5,5 +5,5 @@ from .models import Recipe
 class RecipeListView(ListView):
     model = Recipe
     # queryset = Recipe.objects.filter(status_approved=1).order_by('-created-on')
-    template_name = 'templates/base.html'
+    template_name = 'index.html'
     # paginated_by = 9
