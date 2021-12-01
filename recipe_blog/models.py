@@ -27,7 +27,9 @@ class Recipe(models.Model):
     main_image = CloudinaryField('image', default='placeholder')
     tag = TaggableManager()
     slug = models.SlugField(max_length=100, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="recipe_post", default=0)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recipe_post", default=0
+        )
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
