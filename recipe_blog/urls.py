@@ -1,8 +1,7 @@
-from django.urls import path, include
-from .views import RecipeListView
+from . import views
+from django.urls import path
 
 
 urlpatterns = [
-    path('', RecipeListView.as_view(), name='home'),
-    path('', include('recipe_blog.urls'), name='recipe_blog_urls'),
+    path('', views.RecipeListView.as_view(), name='home'),
 ]
