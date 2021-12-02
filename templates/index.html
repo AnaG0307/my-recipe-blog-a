@@ -2,6 +2,72 @@
 
 {% block content %}
 
-<h1>Hello world</h1>
+<div class="container-fluid m-3 car-col">
+    <!-- Featured recipes caroussel -->
+    <div class="row justify-content-center p-3">
+        <div class="col-8">
+            <h3 class="text-center mb-2 title-f">Get inspired by our most popular recipes!</h3>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href=""><img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638458848/jimmy-dean-Yn0l7uwBrpw-unsplash_nenq38.jpg"
+                            class="d-block w-100" alt="..."></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href=""><img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638458805/davide-cantelli-jpkfc5_d-DI-unsplash_xsc4bp.jpg"
+                            class="d-block w-100" alt="..."></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href=""><img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                            class="d-block w-100" alt="..."></a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
+    <!-- All recipes index -->
+    <div class="row">
+        <div class="col m-3 left">
+            <div class="card" style="width: 18rem;">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-warning">See Recipe</a>
+                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457773/lily-banse--YHSwy6uqvk-unsplash_pc7cl7.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk
+                        of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-warning">See Recipe</a>
+                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 {% endblock %}
