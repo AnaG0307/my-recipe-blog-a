@@ -6,35 +6,40 @@
 
     <!-- Featured recipes caroussel from Bootstrap -->
     <div class="row justify-content-center p-3 car-col">
-        <div class="col-8">
+        <div class="col-8" style="width: 90%;">
             <div class="row">
                 <h3 class="text-center my-4 text-secondary">Get inspired by our most popular recipes!</h3>
             </div>
             <div class="row">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Carousel -->
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href=""><img
-                                    src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638458848/jimmy-dean-Yn0l7uwBrpw-unsplash_nenq38.jpg"
-                                    class="d-block w-100" alt="..."></a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href=""><img
-                                    src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638458805/davide-cantelli-jpkfc5_d-DI-unsplash_xsc4bp.jpg"
-                                    class="d-block w-100" alt="..."></a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href=""><img
-                                    src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
-                                    class="d-block w-100" alt="..."></a>
+                            <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638458848/jimmy-dean-Yn0l7uwBrpw-unsplash_nenq38.jpg"
+                                class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block bg-warning text-dark rounded">
+                                <a href="" class="link-dark">
+                                    <h5>First slide label</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
@@ -45,101 +50,156 @@
     </div>
 
     <!-- All recipes index -->
-    <div class="row m-5">
-        <h3 class="text-left my-4 text-secondary">Find all your new favourite recipes here:</h3>
+    <div class="row m-3">
+        <h3 class="text-left text-secondary mt-5">Find all your new favourite recipes here:</h3>
     </div>
-    <div class="row justify-content-start m-5">
-        <div class="col-lg-4 my-3">
 
-            <!-- Recipe cards from Bootstrap -->
-            <div class="card" style="width: 18rem;">
+    <!-- Recipe cards from Bootstrap -->
+    <div class="row justify-content-start m-4">
+        <div class="col-lg-4 mb-3">
+            <div class="card">
                 <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                     class="card-img-top p-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Recipe title</h5>
                     <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
-                        bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-warning">See Recipe</a>
-                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 my-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457773/lily-banse--YHSwy6uqvk-unsplash_pc7cl7.jpg"
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                     class="card-img-top p-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Recipe title</h5>
                     <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
-                        bulk
-                        of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-warning">See Recipe</a>
-                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 my-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457773/lily-banse--YHSwy6uqvk-unsplash_pc7cl7.jpg"
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                     class="card-img-top p-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Recipe title</h5>
                     <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
-                        bulk
-                        of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-warning">See Recipe</a>
-                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 my-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457773/lily-banse--YHSwy6uqvk-unsplash_pc7cl7.jpg"
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                     class="card-img-top p-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Recipe title</h5>
                     <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
-                        bulk
-                        of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-warning">See Recipe</a>
-                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 my-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457773/lily-banse--YHSwy6uqvk-unsplash_pc7cl7.jpg"
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                     class="card-img-top p-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Recipe title</h5>
                     <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
-                        bulk
-                        of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-warning">See Recipe</a>
-                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 my-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457773/lily-banse--YHSwy6uqvk-unsplash_pc7cl7.jpg"
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                     class="card-img-top p-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Recipe title</h5>
                     <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
-                        bulk
-                        of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-warning">See Recipe</a>
-                    <a href="#" class="btn btn-warning">Save Recipe</a>
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
                 </div>
             </div>
         </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    class="card-img-top p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe title</h5>
+                    <p class="card-text">Some quick example recipe excerpt to build on the card title and make up the
+                        bulk of the card's content.</p>
+                    <a href="#" class="btn btn-warning m-1">See Recipe</a>
+                    <a href="#" class="btn btn-warning m-1">Save Recipe</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
