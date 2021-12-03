@@ -8,7 +8,7 @@ STATUS_APPROVED = ((0, "Draft"), (1, "Published"))
 STATUS_PUBPRI = ((0, "Private"), (1, "Public"))
 
 
-class Ingredients(models.Model):
+class Ingredient(models.Model):
     ingr_name = models.CharField(max_length=200, unique=True)
     type = models.CharField(max_length=200)
 
@@ -28,7 +28,7 @@ class Recipe(models.Model):
     main_image = CloudinaryField('image', default='placeholder')
     excerpt = models.CharField(max_length=250, blank=True)
     content = models.TextField()
-    ingredients = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
+    ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     created_on = models.DateField(auto_now_add=True)
@@ -79,6 +79,6 @@ class Tag(models.Model):
 
 class Shopping_list(models.Model):
     user_list = models.ForeignKey(Blog_user, on_delete=models.CASCADE)
-    ingredient_added = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
+    ingredient_added = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     quantity = models.DecimalField(max_digits=6, decimal_places=2)
     to_buy = models.BooleanField(default=False)
