@@ -21,15 +21,15 @@ class Ingredients(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    content = models.TextField()
-    ingredients = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
-    excerpt = models.CharField(max_length=250, blank=True)
-    main_image = CloudinaryField('image', default='placeholder')
-    tag = TaggableManager()
     slug = models.SlugField(max_length=100, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_post", default=0
         )
+    main_image = CloudinaryField('image', default='placeholder')
+    excerpt = models.CharField(max_length=250, blank=True)
+    content = models.TextField()
+    ingredients = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
+    tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
