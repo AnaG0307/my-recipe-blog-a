@@ -6,4 +6,4 @@ from .models import Recipe
 class Recipe_List_View(ListView):
     model = Recipe
     template_name = 'index.html'
-    paginated_by = 9
+    paginate_by = 9
