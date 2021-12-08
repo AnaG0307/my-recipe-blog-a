@@ -11,14 +11,15 @@ class Recipe_List_View(generic.ListView):
 
 
 class RecipePost(View):
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(approved=1)
         recipe = get_object_or_404(queryset, slug=slug)
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
+        context = {
+            'recipes': recipe
+        }
 
-        return render(
-            request,
-            'recipe_post.html',
-        )
+        return render(request, 'recipe_post.html', context)
