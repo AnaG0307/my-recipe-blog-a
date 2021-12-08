@@ -110,14 +110,15 @@
                     <img src="{{ recipe.main_image.url }}" class="card-img-top p-2" alt="...">
                     {% endif %}
                     <div class="card-body">
-                        <!-- title -->
+                        <!-- title and author -->
                         <h3 class="card-title">{{ recipe.title }}</h3>
+                        <h5>Created by: {{ recipe.author }}</h5>
                         <!-- excerpt -->
                         <p class="card-text">{{ recipe.excerpt }}</p>
                         <!-- comments and likes -->
                         <p>Likes <i class="far fa-heart"> {{ recipe.number_of_likes }}</i></p>
                         <!-- save & see recipe buttons -->
-                        <a href="#" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
+                        <a href="{% url 'recipe_post' recipe.slug  %}" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
                         <a href="#" class="btn btn-warning btn-outline-dark m-1">Save Recipe</a>
                     </div>
                 </div>
