@@ -2,30 +2,43 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-md m-5">
     <!-- recipe featured image -->
     <div class="container">
-        <div class="row">
-            <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638898824/Recipe%20fotos/rachel-park-hrlvr2ZlUNk-unsplash_kggjek.jpg"
-                alt="">
+        <div class="row mx-auto" style="width: 70%;">
+                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    alt="">
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="row">
-        <h1>{{ recipes.title }}</h1>
-        <p>{{ recipes.author }} | {{ recipes.updated_on }} | {{ recipes.number_of_likes }} | {{ recipes.comment }}</p>
-        <p>excerpt</p>
+<div class="container-md m-5">
+    <div class="row m-3 row align-items-start">
+        <div class="col">
+            <h1>{{ recipes.title }}</h1>
+            <p>{{ recipes.author }} | {{ recipes.updated_on }}</p>
+            <p>{{ recipes.number_of_likes }} {{ comments.number_of_comments }}</p>
+        </div>
+        <div class="col m-5">
+            <a href="" class="btn btn-warning btn-outline-dark m-2 w-100">
+                <h4>Add to my calendar</h4>
+            </a>
+            <a href="" class="btn btn-warning btn-outline-dark m-2 w-100">
+                <h4>Save to my recipes</h4>
+            </a>
+        </div>
     </div>
-    <div class="row">
-        content
+    <div class="row" m-3>
+        <div class="col">
+            {{ recipes.content }}
+        </div>
     </div>
-    <div class="row">
-        <button>Add to my calendar</button>
-        <button>Save to my recipes</button>
-    </div>
-    <div class="row">
-        comments
+    <div class="row m-5">
+        <div class="col">
+            <h4>Comments:</h4>
+        </div>
+        <div class="col">
+            <h4>Post your comment here:</h4>
+        </div>
     </div>
 </div>
 

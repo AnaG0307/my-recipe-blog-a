@@ -70,7 +70,10 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-         return f'Comment {self.content} by {self.name}'
+        return f'Comment {self.content} by {self.name}'
+
+    def number_of_comments(self):
+        return self.approved.count()
 
 
 class Tag(models.Model):
