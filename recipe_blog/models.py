@@ -5,6 +5,7 @@ from taggit.managers import TaggableManager
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
+PUBPRI = ((0, "Private"), (1, "Public"))
 
 
 class Ingredient(models.Model):
@@ -33,6 +34,7 @@ class Recipe(models.Model):
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
     approved = models.IntegerField(choices=STATUS, default=0)
+    public_private = models.IntegerField(choices=PUBPRI, default=0)
     featured = models.BooleanField(default=False)
 
     class Meta:
