@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views import generic
 from .models import Recipe
 
 
-class Recipe_List_View(ListView):
+class Recipe_List_View(generic.ListView):
     model = Recipe
     template_name = 'index.html'
-    paginate_by = 3
+    queryset = Recipe.objects.filter(approved=1)
+    paginate_by = 12

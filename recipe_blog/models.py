@@ -4,8 +4,7 @@ from cloudinary.models import CloudinaryField
 from taggit.managers import TaggableManager
 
 
-STATUS_APPROVED = ((0, "Draft"), (1, "Published"))
-STATUS_PUBPRI = ((0, "Private"), (1, "Public"))
+STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Ingredient(models.Model):
@@ -33,8 +32,7 @@ class Recipe(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
-    approved = models.IntegerField(choices=STATUS_APPROVED, default=0)
-    public_private = models.IntegerField(choices=STATUS_PUBPRI, default=0)
+    approved = models.IntegerField(choices=STATUS, default=0)
     featured = models.BooleanField(default=False)
 
     class Meta:

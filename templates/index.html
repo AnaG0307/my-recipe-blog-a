@@ -10,10 +10,9 @@
                 <h3 class="text-center my-4 text-secondary">Get inspired by our most popular recipes!</h3>
             </div>
             <!-- caroussel 1 -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="row justify-content-start mb-3">
                     {% for recipe in recipe_list %}
-                    <!-- Recipe cards from Bootstrap -->
                     <div class="col-lg-4 mb-5">
                         <div class="card">
                             {% if "placeholder" in recipe.main_image.url %}
@@ -23,13 +22,9 @@
                             <img src="{{ recipe.main_image.url }}" class="card-img-top p-2" alt="...">
                             {% endif %}
                             <div class="card-body">
-                                <!-- title -->
                                 <h3 class="card-title">{{ recipe.title }}</h3>
-                                <!-- excerpt -->
                                 <p class="card-text">{{ recipe.excerpt }}</p>
-                                <!-- comments and likes -->
                                 <p>Likes <i class="far fa-heart"> {{ recipe.number_of_likes }}</i></p>
-                                <!-- save & see recipe buttons -->
                                 <a href="#" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
                                 <a href="#" class="btn btn-warning btn-outline-dark m-1">Save Recipe</a>
                             </div>
@@ -40,9 +35,9 @@
                 <div class="row justify-content-start mb-3">
                     {% endif %}
                     {% endfor %}
-                </div>
+                </div> -->
                 <!-- Carousel 2 -->
-                <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -93,7 +88,7 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
