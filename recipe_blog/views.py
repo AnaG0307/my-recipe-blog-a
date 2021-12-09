@@ -22,6 +22,7 @@ class RecipePost(View):
         context = {
             'recipes': recipe,
             'liked': liked,
+            'commented': False,
             'comment_form': CommentForm()
 
         }
@@ -36,9 +37,21 @@ class RecipePost(View):
         context = {
             'recipes': recipe,
             'liked': liked,
+            'commented': True,
             'comment_form': CommentForm()
-
         }
+
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = recipe
+            comment.save()
+        else:
+            comment_form = "Something went wrong, refresh the page and try again!"
+
         return render(request, 'recipe_post.html', context)
 
 

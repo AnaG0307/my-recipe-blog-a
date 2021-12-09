@@ -54,6 +54,13 @@
     <div class="row p-5 car-col">
         <div class="col-4">
             <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-dark" role="alert">
+                    Bare with us, we are checking your comment
+                </div>
+
+                {% else %}
+
                 {% if user.is_authenticated %}
                 <h4>Post your comment here:</h4>
                 <p>Your username: {{ user.username }}</p>
@@ -62,6 +69,7 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-warning btn-outline-dark w-25">Post</button>
                 </form>
+                {% endif %}
                 {% endif %}
             </div>
         </div>
