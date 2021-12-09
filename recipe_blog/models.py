@@ -8,6 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 PUBPRI = ((0, "Private"), (1, "Public"))
 
 
+
 class Ingredient(models.Model):
     ingr_name = models.CharField(max_length=200, unique=True)
     type = models.CharField(max_length=200)
@@ -31,6 +32,16 @@ class Recipe(models.Model):
     ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    BEGINNER = 'B'
+    INTERMEDIATE = 'I'
+    ADVANCED = 'A'
+    LEVEL = [
+    ("BEGINNER", "Beginner"),
+    ("INTERMEDIATE", "Intermediate"),
+    ("ADVANCED", "Advanced"),
+    ]
+    difficulty = models.CharField(max_length=20, choices=LEVEL, default=BEGINNER, null=True)
+    time = models.CharField(max_length=50, blank=True)
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
     approved = models.IntegerField(choices=STATUS, default=0)

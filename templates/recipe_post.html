@@ -6,8 +6,8 @@
     <!-- recipe featured image -->
     <div class="container">
         <div class="row mx-auto" style="width: 70%;">
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
-                    alt="">
+            <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                alt="">
         </div>
     </div>
 </div>
@@ -16,7 +16,18 @@
         <div class="col">
             <h1>{{ recipes.title }}</h1>
             <p>{{ recipes.author }} | {{ recipes.updated_on }}</p>
-            <p>{{ recipes.number_of_likes }} {{ comments.number_of_comments }}</p>
+            <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipes.difficulty }}</p>
+            <p><i class="fas fa-clock"></i> Cooking Time: {{ recipes.time }}</p>
+            <p>
+                <div class="row">
+                    <div class="col-4">
+                        <i class="far fa-heart"></i> {{ recipes.number_of_likes }} Likes
+                    </div>
+                    <div class="col-4">
+                        <i class="far fa-comments"></i> {{ comments.number_of_comments }} Comments
+                    </div>
+                </div>
+            </p>
         </div>
         <div class="col m-5">
             <a href="" class="btn btn-warning btn-outline-dark m-2 w-100">
@@ -41,7 +52,7 @@
         </div>
         <div class="col">
             <h4>Post your comment here:</h4>
-            <form  action="POST">
+            <form action="POST">
                 <p>write your comment here!</p>
                 <button class="btn btn-warning btn-outline-dark w-25">Post</button>
             </form>
