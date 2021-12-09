@@ -6,7 +6,7 @@ from .models import Recipe, Comment
 class Recipe_List_View(generic.ListView):
     model = Recipe
     template_name = 'index.html'
-    queryset = Recipe.objects.filter(approved=1, public_private=1)
+    queryset = Recipe.objects.filter(approved=1)
     paginate_by = 12
 
 
