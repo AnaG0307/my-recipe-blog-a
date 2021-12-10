@@ -77,7 +77,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=50)
     content = models.TextField()
     created_on = models.DateField(auto_now_add=True)
-    recipe_title = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    recipe_title = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")
     approved = models.BooleanField(default=False)
     email = models.EmailField(max_length=100)
 

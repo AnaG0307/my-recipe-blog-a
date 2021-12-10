@@ -64,7 +64,7 @@
                 {% if user.is_authenticated %}
                 <h4>Post your comment here:</h4>
                 <p>Your username: {{ user.username }}</p>
-                <form action="post">
+                <form method="post">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-warning btn-outline-dark w-25">Post</button>
@@ -75,6 +75,14 @@
         </div>
         <div class="col-8">
             <h4>Comments:</h4>
+            {% for comment in comments %}
+            <div>
+                <p>{{ comment.name }}</p>
+                <p>{{ comment.content | linebreaks }}</p>
+            </div>
+            {% endfor %}
+
+            <p></p>
         </div>
     </div>
 </div>
