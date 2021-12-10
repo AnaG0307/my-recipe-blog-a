@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <!-- Featured recipes caroussel from Bootstrap -->
     <div class="row justify-content-center p-3 car-col">
-        <div class="col-8 mb-5" style="width: 90%;">
+        <div class="col-8 mb-5" style="width: 70%;">
             <div class="row">
                 <h3 class="text-center my-4 text-secondary">Get inspired by our most popular recipes!</h3>
             </div>
@@ -114,7 +114,7 @@
                     <h3 class="card-title">{{ recipe.title }}</h3>
                     <h5>Created by: {{ recipe.author }}</h5>
                     <!-- excerpt -->
-                    <p class="card-text">{{ recipe.excerpt }}</p>
+                    <p class="card-text">{{ recipe.excerpt | safe }}</p>
                     <!-- difficulty and cooking time -->
                     <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipe.difficulty }}</p>
                     <p><i class="fas fa-clock"></i> Cooking Time: {{ recipe.time }}</p>

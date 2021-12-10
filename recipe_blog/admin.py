@@ -17,7 +17,7 @@ class RecipeAdmin(SummernoteModelAdmin):
     date_hierarchy = 'created_on'
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('approved', 'created_on', 'featured')
-    summernote_fields = ('content', 'excerpt')
+    summernote_fields = ('content', 'excerpt',)
     actions = ['user_recipe_public', 'feature_recipe', 'approved']
 
     def user_recipe_public(self, request, queryset):
