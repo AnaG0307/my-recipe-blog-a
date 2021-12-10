@@ -10,6 +10,7 @@ PUBPRI = ((0, "Private"), (1, "Public"))
 
 class Ingredient(models.Model):
     ingr_name = models.CharField(max_length=200, unique=True)
+    quantity = models.DecimalField(max_digits=6, decimal_places=2, default=None)
     type = models.CharField(max_length=200)
 
     class Meta:
@@ -28,9 +29,10 @@ class Recipe(models.Model):
     main_image = CloudinaryField('image', default='placeholder')
     excerpt = models.CharField(max_length=250, blank=True)
     content = models.TextField()
-    ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+    ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name='ingredient')
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    favourite = models.ManyToManyField(User, related_name = 'favourites', default=None, blank=True)
     BEGINNER = 'B'
     INTERMEDIATE = 'I'
     ADVANCED = 'A'
