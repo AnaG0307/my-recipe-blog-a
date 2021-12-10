@@ -2,47 +2,51 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row justify-content-start mb-3">
-        {% for recipe in recipe_list %}
-        <!-- Recipe cards from Bootstrap -->
-        <div class="col-lg-4 mb-5">
-            <div class="card">
-                {% if "placeholder" in recipe.main_image.url %}
-                <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
-                    class="card-img-top p-2" alt="...">
-                {% else %}
-                <img src="{{ recipe.main_image.url }}" class="card-img-top p-2" alt="...">
-                {% endif %}
-                <div class="card-body">
-                    <!-- title and author -->
-                    <h3 class="card-title">{{ recipe.title }}</h3>
-                    <h5>Created by: {{ recipe.author }}</h5>
-                    <!-- excerpt -->
-                    <p class="card-text">{{ recipe.excerpt }}</p>
-                    <!-- difficulty and cooking time -->
-                    <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipe.difficulty }}</p>
-                    <p><i class="fas fa-clock"></i> Cooking Time: {{ recipe.time }}</p>
-                    <!-- comments and likes -->
-                    <p>
-                        <div class="row">
-                            <div class="col-4">
-                                <i class="far fa-heart"></i> {{ recipes.number_of_likes }} Likes
+<div class="container">
+    <div class="col m-5">
+        <div class="row justify-content-start mb-3">
+            {% for recipe in recipe_list %}
+            {% for post in new %}
+            <!-- Recipe cards from Bootstrap -->
+            <div class="col-lg-4 mb-5">
+                <div class="card">
+                    {% if "placeholder" in recipe.main_image.url %}
+                    <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                        class="card-img-top p-2" alt="...">
+                    {% else %}
+                    <img src="{{ recipe.main_image.url }}" class="card-img-top p-2" alt="...">
+                    {% endif %}
+                    <div class="card-body">
+                        <!-- title and author -->
+                        <h3 class="card-title">{{ recipe.title }}</h3>
+                        <h5>Created by: {{ recipe.author }}</h5>
+                        <!-- excerpt -->
+                        <p class="card-text">{{ recipe.excerpt }}</p>
+                        <!-- difficulty and cooking time -->
+                        <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipe.difficulty }}</p>
+                        <p><i class="fas fa-clock"></i> Cooking Time: {{ recipe.time }}</p>
+                        <!-- comments and likes -->
+                        <p>
+                            <div class="row">
+                                <div class="col-4">
+                                    <i class="far fa-heart"></i> {{ recipes.number_of_likes }} Likes
+                                </div>
                             </div>
-                        </div>
-                    </p>
-                    <!-- save & see recipe buttons -->
-                    <a href="{% url 'recipe_post' recipe.slug  %}" class="btn btn-warning btn-outline-dark m-1">See
-                        Recipe</a>
-                    <a href="#" class="btn btn-warning btn-outline-dark m-1">Save Recipe</a>
+                        </p>
+                        <!-- save & see recipe buttons -->
+                        <a href="{% url 'recipe_post' recipe.slug  %}" class="btn btn-warning btn-outline-dark m-1">See
+                            Recipe</a>
+                        <a href="{% url 'favourite_recipe' recipe.slug %}" class="btn btn-warning btn-outline-dark m-1">Remove Recipe</a>
+                    </div>
                 </div>
             </div>
+            {% if forloop.counter|divisibleby:3 %}
         </div>
-        {% if forloop.counter|divisibleby:3 %}
-    </div>
-    <div class="row justify-content-start mb-3">
-        {% endif %}
-        {% endfor %}
+        <div class="row justify-content-start mb-3">
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 

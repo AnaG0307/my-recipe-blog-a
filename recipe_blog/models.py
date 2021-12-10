@@ -32,7 +32,7 @@ class Recipe(models.Model):
     ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name='ingredient')
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    favourite = models.ManyToManyField(User, related_name = 'favourites', default=None, blank=True)
+    favourite = models.ManyToManyField(User, related_name='favourites', default=None, blank=True)
     BEGINNER = 'B'
     INTERMEDIATE = 'I'
     ADVANCED = 'A'

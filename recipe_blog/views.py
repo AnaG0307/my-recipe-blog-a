@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
@@ -58,19 +58,19 @@ class RecipePost(View):
         return render(request, 'recipe_post.html', context)
 
 
+# @login_required
+# def favourite_list(request):
+#     saved = Recipe.objects.filter(favourite=request.user)
+#     return render(request, 'saved_recipes.html', {
+#         'saved': saved
+#         })
 
-@login_required
-def favourite_recipe(self, request, slug):
-    post = get_object_or_404(Recipe, slug=slug)
-    if post.favourite.filter(id=request.user.id).exists():
-        post.favourite.remove(request.user)
-    else:
-        post.favourite.add(request.user)
-    return HttpResponseRedirect(reverse('recipe_list'), args=[slug])
 
-@login_required
-def favourite_list(request):
-    saved = Recipe.objects.filter(favourite=request.user)
-    return render(request, 'saved_recipes.html', {
-        'saved': saved,
-    })
+# @login_required
+# def favourite_recipe(request, slug):
+#     post = get_object_or_404(Recipe, slug=slug)
+#     if post.favourite.filter(id=request.user.id).exists():
+#         post.favourite.remove(request.user)
+#     else:
+#         post.favourite.add(request.user)
+#     return HttpResponseRedirect(request.META['HTTP_REFERER'])
