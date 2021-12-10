@@ -29,6 +29,7 @@ class Recipe(models.Model):
     main_image = CloudinaryField('image', default='placeholder')
     excerpt = models.CharField(max_length=250, blank=True)
     content = models.TextField()
+    list = models.TextField(blank=True)
     ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name='ingredient')
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
