@@ -1,12 +1,7 @@
-/* Navigation bar */
-
 a:hover {
     color: #adb5bd;
     text-decoration: underline;
 }
-
-
-/* Carousel */
 
 .car-col {
     background-color: #FFF8DC;
@@ -14,4 +9,17 @@ a:hover {
 
 .bg-car {
     background-color: #ffc107;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
 }

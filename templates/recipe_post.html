@@ -16,17 +16,35 @@
 <div class="container-fluid p-5">
     <div class="row align-items-start pb-3 ps-3">
         <div class="col">
-            <h1>{{ recipes.title }}</h1>
-            <p>{{ recipes.author }} | {{ recipes.updated_on }}</p>
-            <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipes.difficulty }}</p>
-            <p><i class="fas fa-clock"></i> Cooking Time: {{ recipes.time }}</p>
+            <h1>{{ recipe.title }}</h1>
+            <p>{{ recipe.author }} | {{ recipe.updated_on }}</p>
+            <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipe.difficulty }}</p>
+            <p><i class="fas fa-clock"></i> Cooking Time: {{ recipe.time }}</p>
             <p>
                 <div class="row">
                     <div class="col-4">
-                        <i class="far fa-heart"></i> {{ recipes.number_of_likes }} Likes
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{ recipe.slug }}" class="btn-like">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{ recipe.slug }}" class="btn-like">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <span class="text-secondary">{{ recipe.number_of_likes }} Likes</span>
+                        </strong>
                     </div>
                     <div class="col-4">
-                        <i class="far fa-comments"></i> {{ comments.number_of_comments }} Comments
+                        <i class="far fa-comments"></i> {{ comment.number_of_comments }} Comments
                     </div>
                 </div>
             </p>
@@ -43,10 +61,10 @@
     <div class="row ps-3">
         <div class="col-4">
             <h3>Ingredients</h3>
-            {{ recipes.ingredients }}
+            {{ recipe.ingredients }}
         </div>
         <div class="col-8">
-            {{ recipes.content | safe }}
+            {{ recipe.content | safe }}
         </div>
     </div>
 </div>
