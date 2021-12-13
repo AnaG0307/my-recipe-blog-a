@@ -4,23 +4,28 @@
 
 <!-- recipe featured image -->
 <div class="container-fluid">
-<p>Here you can view your full recipe</p>
-</div>
-
-<!-- Recipe section -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-4">
-            <p>
-                {{ items.ingredients_list }}
-            </p>
-        </div>
-        <div class="col-8">
-           <h1>{{ items.title }}</h1>
-           <p>{{ items.content }}</p>
-        </div>
+    <div class="row mx-auto p-3" style="width: 70%;">
+        <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+            alt="">
     </div>
 </div>
 
+<!-- Recipe section -->
+<div class="container-fluid p-5">
+    <div class="row align-items-start pb-3 ps-3">
+        <div class="col">
+            <h1>{{ userrecipe.title }}</h1>
+        </div>
+    </div>
+    <div class="row ps-3">
+        <div class="col-4">
+            <h3>Ingredients</h3>
+            {{ userrecipe.list }}
+        </div>
+        <div class="col-8">
+            {{ userrecipe.content | safe }}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

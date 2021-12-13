@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from django.views import generic
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views import generic, View
 from .models import UserCreation
 from .forms import RecipeForm
 
@@ -20,18 +20,22 @@ def user_recipe(request):
 
 def user_create(request):
     if request.method == 'POST':
-        title = request.POST.get('item_title')
-        ingredients = request.POST.get('item_ingredients')
-        content = request.POST.get('item_content')
-        UserCreation.objects.create(
-            title=title,
-            ingredients=ingredients,
-            content=content
-            )
-        return redirect('myrecipes')
-
+        userform = RecipeForm(request.POST)
+        if userform.is_valid():
+            userform.save()
+            return redirect('myrecipes')
     userform = RecipeForm()
     context = {
         'userform': userform
     }
     return render(request, 'recipe_create_user.html', context)
+
+
+class UserPost(View):
+    def get(self, request, slug, *args, **kwargs):
+        queryset = UserCreation.objects.all()
+        user_post = get_object_or_404(queryset, slug=slug)
+        context = {
+            'userrecipe': userrecipe,
+        }
+        return render(request, 'recipe_post-user.html', context)
