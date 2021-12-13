@@ -14,8 +14,4 @@ def User_Recipe(request):
     context = {
         'items': items
     }
-    return render(request, 'recipe_post_user.html', context)
-
-
-def say_hello(request):
-    return HttpResponse("Hello!")
+    return render(request, 'recipe_list_user.html', context)
