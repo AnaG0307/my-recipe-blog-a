@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recipe, Ingredient, Comment
+from .models import Recipe, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -25,13 +25,6 @@ class RecipeAdmin(SummernoteModelAdmin):
 
     def feature_recipe(self, request, queryset):
         queryset.update(approved=True)
-
-
-@admin.register(Ingredient)
-class IngredientAdmin(admin.ModelAdmin):
-    search_fields = ['ingr_name', 'type']
-    list_display = ('ingr_name', 'type', 'id')
-    list_filter = ('ingr_name', 'type')
 
 
 @admin.register(Comment)

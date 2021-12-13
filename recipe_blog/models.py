@@ -5,19 +5,6 @@ from taggit.managers import TaggableManager
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
-PUBPRI = ((0, "Private"), (1, "Public"))
-
-
-class Ingredient(models.Model):
-    ingr_name = models.CharField(max_length=200, unique=True)
-    quantity = models.DecimalField(max_digits=6, decimal_places=2, default=None)
-    type = models.CharField(max_length=200)
-
-    class Meta:
-        ordering = ['ingr_name']
-
-    def __string__(self):
-        return self.ingr_name
 
 
 class Recipe(models.Model):
@@ -30,7 +17,6 @@ class Recipe(models.Model):
     excerpt = models.CharField(max_length=250, blank=True)
     content = models.TextField()
     list = models.TextField(blank=True)
-    ingredients = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name='ingredient')
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     favourite = models.ManyToManyField(User, related_name='favourites', default=None, blank=True)
@@ -52,7 +38,6 @@ class Recipe(models.Model):
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
     approved = models.IntegerField(choices=STATUS, default=0)
-    public_private = models.IntegerField(choices=PUBPRI, default=0)
     featured = models.BooleanField(default=False)
 
     class Meta:
@@ -63,17 +48,6 @@ class Recipe(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-
-
-class Blog_user(models.Model):
-    username = models.CharField(max_length=200, unique=True)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
-    created_recipes = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.username
 
 
 class Comment(models.Model):
@@ -96,10 +70,3 @@ class Comment(models.Model):
 
 class Tag(models.Model):
     Tag_name = models.CharField(max_length=100)
-
-
-class Shopping_list(models.Model):
-    user_list = models.ForeignKey(Blog_user, on_delete=models.CASCADE)
-    ingredient_added = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    quantity = models.DecimalField(max_digits=6, decimal_places=2)
-    to_buy = models.BooleanField(default=False)
