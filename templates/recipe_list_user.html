@@ -3,8 +3,35 @@
 {% block content %}
 
 <div class="container-fluid">
-    <p>here you can view you list of recipes</p>
-    {{ items }}
+    <p>here you can view your list of recipes</p>
+    <div class="col m-5">
+        <div class="row justify-content-start mb-3">
+            {% for item in items %}
+            <!-- Recipe cards from Bootstrap -->
+            <div class="col-lg-4 mb-5">
+                <div class="card">
+                    {% if "placeholder" in item.image.url %}
+                    <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                        class="card-img-top p-2" alt="...">
+                    {% else %}
+                    <img src="{{ item.image.url }}" class="card-img-top p-2" alt="...">
+                    {% endif %}
+                    <div class="card-body">
+                        <!-- title and author -->
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <!-- save & see recipe buttons -->
+                        <a href="#" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="row justify-content-start mb-3">
+            {% endif %}
+            {% endfor %}
+        </div>
+        <a class="btn btn-warning btn-outline-dark w-25" href="/create-recipe">Create your recipe</a>
+    </div>
 </div>
 
 

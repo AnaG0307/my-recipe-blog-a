@@ -4,8 +4,16 @@
 
 {% load crispy_forms_tags %}
 
-<div class="container-fluid">
+<div class="container-fluid p-5">
+    <h1>Here you can create, update or delete your recipe</h1>
 
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div>
+            {{ userform | crispy }}
+        </div>
+        <a class="btn btn-warning btn-outline-dark w-25" href="/myrecipes">Save recipe</a>
+    </form>
 </div>
 
 

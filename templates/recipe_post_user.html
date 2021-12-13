@@ -2,16 +2,24 @@
 
 {% block content %}
 
-{% load crispy_forms_tags %}
-
 <!-- recipe featured image -->
 <div class="container-fluid">
-<p>hello</p>
+<p>Here you can view your full recipe</p>
 </div>
 
 <!-- Recipe section -->
-<div class="container-fluid p-5">
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <p>
+                {{ items.ingredients_list }}
+            </p>
+        </div>
+        <div class="col-8">
+           <h1>{{ items.title }}</h1>
+           <p>{{ items.content }}</p>
+        </div>
+    </div>
 </div>
 
 

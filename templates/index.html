@@ -147,7 +147,8 @@
     <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
         <li class="page-item m-1">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo; Previous</a>
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;
+                Previous</a>
         </li>
         {% endif %}
         {% if page_obj.has_next %}
