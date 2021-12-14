@@ -31,11 +31,11 @@ def user_create(request):
     return render(request, 'recipe_create_user.html', context)
 
 
-class UserPost(View):
-    def get(self, request, slug, *args, **kwargs):
-        queryset = UserCreation.objects.all()
-        user_post = get_object_or_404(queryset, slug=slug)
-        context = {
-            'userrecipe': userrecipe,
-        }
-        return render(request, 'recipe_post-user.html', context)
+# class UserPost(View):
+#     def get(self, request, slug, *args, **kwargs):
+#         queryset = UserCreation.objects.all()
+#         user_post = get_object_or_404(queryset, slug=slug)
+#         context = {
+#             'userrecipe': userrecipe,
+#         }
+#         return render(request, 'recipe_post-user.html', context)
