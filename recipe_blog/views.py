@@ -27,7 +27,7 @@ class RecipePost(View):
             'liked': liked,
             'commented': False,
             'comments': comments,
-            'comment_form': CommentForm()
+            'comment_form': CommentForm(),
         }
         return render(request, 'recipe_post.html', context)
 
@@ -67,6 +67,7 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_post', args=[slug]))
+
 
 
 # @login_required

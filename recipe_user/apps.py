@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class UserRecipesConfig(AppConfig):
+class RecipeUserConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'user_recipes'
+    name = 'recipe_user'

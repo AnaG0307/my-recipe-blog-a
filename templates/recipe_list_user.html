@@ -6,11 +6,11 @@
     <p>here you can view your list of recipes</p>
     <div class="col m-5">
         <div class="row justify-content-start mb-3">
-            {% for item in items %}
+            {% for userrecipe in user_recipe_list %}
             <!-- Recipe cards from Bootstrap -->
             <div class="col-lg-4 mb-5">
                 <div class="card">
-                    {% if "placeholder" in item.image.url %}
+                    {% if "placeholder" in userrecipe.image.url %}
                     <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                         class="card-img-top p-2" alt="...">
                     {% else %}
@@ -18,7 +18,7 @@
                     {% endif %}
                     <div class="card-body">
                         <!-- title and author -->
-                        <h3 class="card-title">{{ item.title }}</h3>
+                        <h3 class="card-title">{{ userrecipe.title }}</h3>
                         <!-- save & see recipe buttons -->
                         <a href="#" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
                     </div>
@@ -34,6 +34,24 @@
         <a href="/user-post" class="btn btn-warning btn-outline-dark m-1">See User Recipe</a>
 
     </div>
+    <!-- Pagination nav from Bootstrap -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item m-1">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;
+                    Previous</a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li class="page-item m-1">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label=" Next">Next &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
 
 

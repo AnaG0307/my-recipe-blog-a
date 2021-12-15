@@ -14,16 +14,16 @@
 <div class="container-fluid p-5">
     <div class="row align-items-start pb-3 ps-3">
         <div class="col">
-            <h1>{{ userrecipe.title }}</h1>
+            <h1>{{ items.title }}</h1>
         </div>
     </div>
     <div class="row ps-3">
         <div class="col-4">
             <h3>Ingredients</h3>
-            {{ userrecipe.list }}
+            {{ items.list }}
         </div>
         <div class="col-8">
-            {{ userrecipe.content | safe }}
+            {{ items.content | safe }}
         </div>
     </div>
 </div>
