@@ -10,7 +10,7 @@
     <form action="" method="POST">
         {% csrf_token %}
         <div>
-            {{  }}
+            {{ UrecipeForm | crispy }}
         </div>
         <a class="btn btn-warning btn-outline-dark w-25" href="/myrecipes">Save recipe</a>
     </form>
