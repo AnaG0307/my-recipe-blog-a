@@ -14,6 +14,7 @@ class UserList(generic.ListView):
 
 
 def urecipe_detail(request):
+    model = UserRecipe
     return render(request, 'recipe_post_user.html')
 
 
@@ -23,18 +24,16 @@ def add_recipe(request):
     if request.method == 'POST':
         form = UrecipeForm(request.POST)
         if form.is_valid():
-            # form.instance.name = request.user.name
             new_recipe = form.save(commit=False)
             print(new_recipe.content)
             new_recipe.slug = slugify(new_recipe.title)
             print(new_recipe.slug)
-            # new_recipe.title = slugify(title)
             new_recipe.save()
-            return HttpResponseRedirect('/add_recipe?Submitted=True')
+            return HttpResponseRedirect('/myrecipes?Submitted=True')
         else:
             form = UrecipeForm()
             if 'submitted' in request.GET:
                 submitted = True
-                
+
 
     return render(request, 'recipe_create_user.html', {'form': form, 'submitted': submitted})

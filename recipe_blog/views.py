@@ -68,8 +68,6 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('recipe_post', args=[slug]))
 
-
-
 # @login_required
 # def favourite_list(request):
 #     saved = Recipe.objects.filter(favourite=request.user)
