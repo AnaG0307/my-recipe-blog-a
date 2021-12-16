@@ -5,15 +5,26 @@
 {% load crispy_forms_tags %}
 
 <div class="container-fluid p-5">
-    <h1>Here you can create, update or delete your recipe</h1>
+    <center>
+        <h1>Here you can create, update or delete your recipe</h1>
 
-    <form action="" method="POST">
-        {% csrf_token %}
-        <div>
-            {{ UrecipeForm | crispy }}
-        </div>
-        <a class="btn btn-warning btn-outline-dark w-25" href="/myrecipes">Save recipe</a>
-    </form>
+        {% if submitted %}
+
+        Your recipe has been created succesfully!
+        
+        {% else %}
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+                {{ form | crispy }}
+            </div>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-warning btn-outline-dark w-25">
+        </form>
+        {% endif %}
+
+    </center>
 </div>
 
 
