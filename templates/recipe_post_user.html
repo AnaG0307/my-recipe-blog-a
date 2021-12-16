@@ -7,6 +7,13 @@
     <div class="row mx-auto p-3" style="width: 70%;">
         <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
             alt="">
+        
+        {% if "placeholder" in post.main_image.url %}
+        <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+            class="card-img-top p-2" alt="...">
+        {% else %}
+        <img src="{{ post.main_image.url  }}" class="card-img-top p-2" alt="...">
+        {% endif %}
     </div>
 </div>
 
@@ -14,16 +21,16 @@
 <div class="container-fluid p-5">
     <div class="row align-items-start pb-3 ps-3">
         <div class="col">
-            <h1>{{ items.title }}</h1>
+            <h1>{{ post.title }}</h1>
         </div>
     </div>
     <div class="row ps-3">
         <div class="col-4">
             <h3>Ingredients</h3>
-            {{ items.list }}
+            {{ post.list }}
         </div>
         <div class="col-8">
-            {{ items.content | safe }}
+            {{ post.content | safe }}
         </div>
     </div>
 </div>
