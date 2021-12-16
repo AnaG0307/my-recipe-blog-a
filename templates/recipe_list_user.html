@@ -3,23 +3,31 @@
 {% block content %}
 
 <div class="container-fluid">
-    <p>here you can view your list of recipes</p>
-    <div class="col m-5">
+    <div class="row p-5">
+        <div class="col">
+            <h3>All my recipes</h3>
+        </div>
+        <div class="col">
+            <a class="btn btn-warning btn-outline-dark w-25" href="#">Create a new recipe</a>
+        </div>
+    </div>
+    <div class="col">
         <div class="row justify-content-start mb-3">
-            {% for urecipe in urecipe_list %}
-            <!-- Recipe cards from Bootstrap -->
+            {% for recipe in userrecipe_list %}
+            <!-- Recipe card from Bootstrap -->
             <div class="col-lg-4 mb-5">
                 <div class="card">
-                    {% if "placeholder" in urecipe.image.url %}
+                    {% if "placeholder" in recipe.image.url %}
                     <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
                         class="card-img-top p-2" alt="...">
                     {% else %}
-                    <img src="{{ item.image.url }}" class="card-img-top p-2" alt="...">
+                    <img src="{{ recipe.image.url }}" class="card-img-top p-2" alt="...">
                     {% endif %}
                     <div class="card-body">
-                        <!-- title and author -->
-                        <h3 class="card-title">{{ urecipe.title }}</h3>
-                        <!-- save & see recipe buttons -->
+                        <!-- title -->
+                        <h3 class="card-title">{{ recipe.title }}</h3>
+                        <p>{{ recipe.created_on }}</p>
+                        <!-- see recipe buttons -->
                         <a href="#" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
                     </div>
                 </div>
@@ -30,9 +38,6 @@
             {% endif %}
             {% endfor %}
         </div>
-        <a class="btn btn-warning btn-outline-dark w-25" href="#">Create your recipe</a>
-        <a href="#" class="btn btn-warning btn-outline-dark m-1">See User Recipe</a>
-
     </div>
     <!-- Pagination nav from Bootstrap -->
     {% if is_paginated %}
