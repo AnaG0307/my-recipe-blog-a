@@ -15,9 +15,9 @@
 <!-- Recipe section -->
 <div class="container-fluid p-5">
     <div class="row align-items-start pb-3 ps-3">
-        <div class="col">
-            <h1>{{ recipe.title }}</h1>
-            <p>{{ recipe.author }} | {{ recipe.updated_on }}</p>
+        <h1>{{ recipe.title }}</h1>
+        <div class="col-4">
+            <p>By: {{ recipe.author }} | {{ recipe.updated_on }}</p>
             <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipe.difficulty }}</p>
             <p><i class="fas fa-clock"></i> Cooking Time: {{ recipe.time }}</p>
             <p>
@@ -43,19 +43,19 @@
                             <span class="text-secondary">{{ recipe.number_of_likes }} Likes</span>
                         </strong>
                     </div>
-                    <div class="col-4">
-                        <i class="far fa-comments"></i> {{ comment.number_of_comments }} Comments
-                    </div>
                 </div>
             </p>
         </div>
-        <div class="col">
-            <a href="" class="btn btn-warning btn-outline-dark m-2 w-75">
+        <div class="col-8 align-self-center">
+            <div class="row align-items-center">
+                <p>{{ recipe.excerpt | safe }}</p>
+                <!-- <a href="" class="btn btn-warning btn-outline-dark m-2 w-75">
                 <h4>Add to my calendar</h4>
             </a>
             <a href="#" class="btn btn-warning btn-outline-dark m-2 w-75">
                 <h4>Save to my recipes</h4>
-            </a>
+            </a> -->
+            </div>
         </div>
     </div>
     <div class="row ps-3">

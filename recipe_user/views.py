@@ -20,9 +20,9 @@ def add_recipe(request):
         form = UrecipeForm(request.POST)
         if form.is_valid():
             new_recipe = form.save(commit=False)
-            print(new_recipe.content)
+            # print(new_recipe.content)
             new_recipe.slug = slugify(new_recipe.title)
-            print(new_recipe.slug)
+            # print(new_recipe.slug)
             new_recipe.save()
             return HttpResponseRedirect('/myrecipes?Submitted=True')
         else:
@@ -37,9 +37,10 @@ def add_recipe(request):
 
 class UrecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
-        queryset = UserRecipe.objects.all()
-        new_post = get_object_or_404(queryset, slug=slug)
+        new_post = get_object_or_404(UserRecipe, slug=slug)
+        form = UrecipeForm(instance=new_post)
         context = {
-            'new_post': new_post
+            'new_post': new_post,
+            'form': form
         }
         return render(request, 'recipe_post_user.html', context)

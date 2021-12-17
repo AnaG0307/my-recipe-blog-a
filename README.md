@@ -1,6 +1,6 @@
 # My Recipe Book
 
-![App page screenshot](static/images/site-screenshot.png)
+![App page screenshot](static/images/screenshot.png)
 
 [View the app in Heroku here](https://my-recipe-book-a.herokuapp.com/)
 
