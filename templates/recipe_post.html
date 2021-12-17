@@ -6,9 +6,13 @@
 
 <!-- recipe featured image -->
 <div class="container-fluid">
-    <div class="row mx-auto p-3" style="width: 70%;">
+    <div class="row mx-auto p-3" style="width: 50%">
+        {% if "placeholder" in recipe.main_image.url %}
         <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
-            alt="">
+            class="card-img-top p-2" alt="...">
+        {% else %}
+        <img src="{{ recipe.main_image.url }}" class="card-img-top p-2" alt="...">
+        {% endif %}
     </div>
 </div>
 
@@ -61,9 +65,10 @@
     <div class="row ps-3">
         <div class="col-4">
             <h3>Ingredients</h3>
-            {{ recipe.list }}
+            {{ recipe.list | safe }}
         </div>
         <div class="col-8">
+            <h3>Method</h3>
             {{ recipe.content | safe }}
         </div>
     </div>

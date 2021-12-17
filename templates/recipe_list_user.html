@@ -17,7 +17,7 @@
             <div class="col-lg-4 mb-5">
                 <div class="card">
                     {% if "placeholder" in recipe.image.url %}
-                    <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+                    <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638446796/Screenshot_2021-12-02_at_12.04.06_d3k2bp.png"
                         class="card-img-top p-2" alt="...">
                     {% else %}
                     <img src="{{ recipe.image.url }}" class="card-img-top p-2" alt="...">
@@ -27,7 +27,7 @@
                         <h3 class="card-title">{{ recipe.title }}</h3>
                         <p>{{ recipe.created_on }}</p>
                         <!-- see recipe buttons -->
-                        <a href="/urecipe-detail/{{ form.slug }}" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
+                        <a href="user/{{ recipe.slug }}" class="btn btn-warning btn-outline-dark m-1">See Recipe</a>
                     </div>
                 </div>
             </div>

@@ -4,15 +4,12 @@
 
 <!-- recipe featured image -->
 <div class="container-fluid">
-    <div class="row mx-auto p-3" style="width: 70%;">
-        <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
-            alt="">
-        
-        {% if "placeholder" in post.main_image.url %}
-        <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638457770/anna-pelzer-IGfIGP5ONV0-unsplash_dktx8e.jpg"
+    <div class="row mx-auto p-3" style="width: 50%;">
+        {% if "placeholder" in new_post.image.url %}
+        <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638446796/Screenshot_2021-12-02_at_12.04.06_d3k2bp.png"
             class="card-img-top p-2" alt="...">
         {% else %}
-        <img src="{{ post.main_image.url  }}" class="card-img-top p-2" alt="...">
+        <img src="{{ new_post.image.url  }}" class="card-img-top p-2" alt="...">
         {% endif %}
     </div>
 </div>

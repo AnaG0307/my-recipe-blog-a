@@ -15,7 +15,7 @@ class UserList(generic.ListView):
 
 def add_recipe(request):
     submitted = False
-    form = UrecipeForm
+    form = UrecipeForm()
     if request.method == 'POST':
         form = UrecipeForm(request.POST)
         if form.is_valid():
@@ -39,6 +39,7 @@ class UrecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         new_post = get_object_or_404(UserRecipe, slug=slug)
         form = UrecipeForm(instance=new_post)
+        print(form, new_post)
         context = {
             'new_post': new_post,
             'form': form
