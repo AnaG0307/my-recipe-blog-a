@@ -20,19 +20,17 @@
 <!-- Recipe section -->
 <div class="container-fluid p-5">
     <div class="row align-items-start pb-3 ps-3">
-        {% for recipe in userrecipe_list %}
         <div class="col">
-            <h1>{{ recipe.title }}</h1>
+            <h1>{{ new_post.title }}</h1>
         </div>
-        {% endfor %}
     </div>
     <div class="row ps-3">
         <div class="col-4">
             <h3>Ingredients</h3>
-            {{ recipe.list }}
+            {{ new_post.list }}
         </div>
         <div class="col-8">
-            {{ recipe.content | safe }}
+            {{ new_post.content | safe }}
         </div>
     </div>
 </div>

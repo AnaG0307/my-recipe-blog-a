@@ -1,7 +1,8 @@
 # My Recipe Book
 
-![App page screenshot](assets/images/app_screenshot.png)
-[View the app in Heroku here](https://adventureland-ana.herokuapp.com/)
+![App page screenshot](static/images/site-screenshot.png)
+
+[View the app in Heroku here](https://my-recipe-book-a.herokuapp.com/)
 
 ## Table of Contents
 
@@ -48,23 +49,52 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
 ## Features
 
 #### Existing Features
-- Navigation Bar
-- Footer
-- Login/Logout/Register
-- My Recipes
-- My Favourite Recipes
+- **Navigation Bar:** (available through all the pages on the site)
+    - When not logged in or not registered, the site user can access the registration page, the login page or do a search throughout the site to find different recipes. The page goes back to the Home page when the site logo is clicked.
+    - When logged in, the site user can access the logout page, the form page to create a recipe and the page where all his/her recipes are stored in "My Recipes". 
+
+- **Footer:** (available through all the pages on the site)
+    The site user can access the different social media pages the site has an account with as well as accessing the About page and go back to the Home page.
+
+-**Home Page:**
+    From here the site user can access the list of recipes created by the Site Admin. All the recipes has an image, recipe title, recipe, excerpt to know a little more about the recipe, level of difficulty, cooking time and how many likes it has. If wished the site user can click on "See Recipe" and access all the details for the recipe with all the steps and ingredients needed.
+
+- **Login/Logout/Register:**
+    The site user can register on the site and once registered s/he can log in and logout from the site whenever they want.
+
+- **Add Recipe:**
+    If registered the site user can access the form to create their own personal recipes, which are stored in the backend.
+
+- **My Recipes:**
+    The page holds all the recipes the registered site user has created as a list. From here the recipes can be seen, edited or deleted if wished by the site user. 
 
 
 #### Future Features
-- My Shopping List
-- Share personal recipes
+-**My Calendar:**
+    The site user will be able to save the recipes they would like to cook and specify when to orh¡ganise their weekly meals.
 
+- **My Shopping List:**
+    The site user would be able to create a shopping list based on the recipes they would like to cook during the week and specify the quantities that needs to be bought.
+
+- **Share personal recipes:**
+    The site user would be able to share their personal recipes with the rest of site users after the site admin has reviewed and authorised it.
+
+
+### Wireframes
+Below are the initial wireframes for the site for both desktop screens and samller devices:
+
+**Desktop screens**
+
+![Desktop](static/images/wireframe-desktop.png)
+
+**Smaller screens**
+
+![Mobile](static/images/wireframe-device.png)
 
 
 ## Data Model
 
-Add database diagram
-
+![ERD Diagram](/static/images/database-diagram.png)
 
 ## Testing
 
@@ -77,9 +107,9 @@ Add database diagram
 
 #### Validator Testing
 
-- Used [PEP8online.com](http://pep8online.com/) and no errors were returned.
+- Used [PEP8online.com](http://pep8online.com/)
 
-![validator-screenshot](assets/images/pep8validator.png)
+
 
 
 ## Technologies Used
@@ -92,28 +122,25 @@ Add database diagram
 - [Cloudinary](https://cloudinary.com/)
 - [Django](https://www.djangoproject.com/)
 - [Heroku](https://id.heroku.com/)
+- [Balsamiq]()
 
 
 ## Deployment
 
 The project is been deployed to Heroku. Steps for deployment:
 
-TO BE DEVELOPED (the one below is for adventureland)
-- Local deployment:
-    - Fork the project to copy the repository: 
-        - On GitHub navigate to the Adventureland repository and in the top-right corner of the page click 'fork';
-    - Clone the project to create a local copy of the repository in your computer:
-        - Within the forked repository click on the green button 'Code';
-        - To clone the repository using HTTPS, under "Clone with HTTPS", click the clipboard sign. Select if you want to use an SSH key or GitHub CLI, then click the clipboard sign;
-        - Open the terminal and change the directory to the location you want;
-        - Type 'git clone' and paste the URL copied in step 2 and press enter to create your clone;
-    - Check the Procfile to ensure a correct deployment to Heroku;
-
 - Deployment to Heroku:
     - Create an account in Heroku;
     - Create a new app in Heroku: choose a unique name and region;
-    - Introduce sensitive data needed to be kept secret in the config Var tab (Cloudinary url, Database url and Secret Key);
+    - Introduce sensitive data needed to be kept secret from the config Var tab in env.py and attach the database (Cloudinary url, Database url and Secret Key);
     - Add necessary buildpacks: Python;
+    - Prepare environment and settings.py file by referencing env.py and link the database variable on Heroku:
+    - Migarte all the changes;
+    - Get all static and media files stored in Cloudinary by adding the cloudinary url in env.py and in Heroku, add Cloudinary to settings.py as well as telling Django, link the file to the templates in Heroku and allow Heroku as a host in Allowed_Hosts;
+    - In Gitpod create the media, static and templates directories;
+    - Add the project name in Procfile;
+    - Make deployment commit in the terminal;
+    - Manually deploy content through Heroku 
     - For deployment method, GitHub was selected and confirmed we want to connect to GitHub;
     - Connect Heroku to the repository for My Recipe Blog a;
     - Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
