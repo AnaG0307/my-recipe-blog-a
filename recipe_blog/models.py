@@ -14,7 +14,7 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_post", default=0
         )
     main_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.CharField(max_length=250, blank=True)
+    excerpt = models.CharField(max_length=500, blank=True)
     content = models.TextField()
     list = models.TextField(blank=True)
     tag = TaggableManager()
