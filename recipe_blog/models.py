@@ -19,7 +19,12 @@ class Recipe(models.Model):
     list = models.TextField(blank=True)
     tag = TaggableManager()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    favourite = models.ManyToManyField(User, related_name='favourites', default=None, blank=True)
+    favourite = models.ManyToManyField(
+        User,
+        related_name='favourites',
+        default=None,
+        blank=True
+        )
     BEGINNER = 'B'
     INTERMEDIATE = 'I'
     ADVANCED = 'A'
@@ -54,7 +59,11 @@ class Comment(models.Model):
     name = models.CharField(max_length=50)
     content = models.TextField()
     created_on = models.DateField(auto_now_add=True)
-    recipe_title = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")
+    recipe_title = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name="comments"
+        )
     approved = models.BooleanField(default=False)
     email = models.EmailField(max_length=100)
 

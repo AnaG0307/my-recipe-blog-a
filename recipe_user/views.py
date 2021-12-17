@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.template.defaultfilters import slugify
@@ -29,15 +29,13 @@ def add_recipe(request):
             form = UrecipeForm()
             if 'submitted' in request.GET:
                 submitted = True
-    return render(request, 'recipe_create_user.html', {'form': form, 'submitted': submitted})
+    return render(request, 'recipe_create_user.html', {
+        'form': form,
+        'submitted': submitted
+        })
 
 
-# def urecipe_detail(request):
-#     model = UserRecipe
-#     return render(request, 'recipe_post_user.html')
-
-
-class urecipe_detail(View):
+class UrecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = UserRecipe.objects.all()
         new_post = get_object_or_404(queryset, slug=slug)
