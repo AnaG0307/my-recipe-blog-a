@@ -13,11 +13,6 @@ class UserList(generic.ListView):
     paginate_by = 9
 
 
-def urecipe_detail(request):
-    model = UserRecipe
-    return render(request, 'recipe_post_user.html')
-
-
 def add_recipe(request):
     submitted = False
     form = UrecipeForm
@@ -34,6 +29,19 @@ def add_recipe(request):
             form = UrecipeForm()
             if 'submitted' in request.GET:
                 submitted = True
-
-
     return render(request, 'recipe_create_user.html', {'form': form, 'submitted': submitted})
+
+
+# def urecipe_detail(request):
+#     model = UserRecipe
+#     return render(request, 'recipe_post_user.html')
+
+
+class urecipe_detail(View):
+    def get(self, request, slug, *args, **kwargs):
+        queryset = UserRecipe.objects.all()
+        new_post = get_object_or_404(queryset, slug=slug)
+        context = {
+            'new_post': new_post
+        }
+        return render(request, 'recipe_post_user.html', context)
