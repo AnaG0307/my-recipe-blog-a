@@ -5,25 +5,33 @@
 {% load crispy_forms_tags %}
 
 <div class="container-fluid p-5">
-    <center>
-        <h1>Create your recipe</h1>
+    <div class="row">
+        <div class="col text-center">
+            <h1>Create your recipe</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if submitted %}
 
-        {% if submitted %}
+            Your recipe has been created succesfully!
 
-        Your recipe has been created succesfully!
-        
-        {% else %}
+            {% else %}
 
-        <form action="" method="POST">
-            {% csrf_token %}
-            <div>
-                {{ form | crispy }}
-            </div>
-            <br>
-            <input type="submit" value="Submit" class="btn btn-warning btn-outline-dark w-25">
-        </form>
-        {% endif %}
-    </center>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div>
+                    {{ form | crispy }}
+                </div>
+                <br>
+                <center>
+                    <input type="submit" value="Submit" class="btn btn-warning btn-outline-dark w-25">
+                </center>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+
 </div>
 
 
