@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.template.defaultfilters import slugify
@@ -8,7 +8,7 @@ from .forms import UrecipeForm
 
 class UserList(generic.ListView):
     model = UserRecipe
-    queryset = UserRecipe.objects.filter(public_private=0)
+    queryset = UserRecipe.objects.filter(public_private=0).order_by("-created_on")
     template_name = 'recipe_list_user.html'
     paginate_by = 9
 
@@ -39,9 +39,22 @@ class UrecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         new_post = get_object_or_404(UserRecipe, slug=slug)
         form = UrecipeForm(instance=new_post)
-        print(form, new_post)
         context = {
             'new_post': new_post,
             'form': form
         }
         return render(request, 'recipe_post_user.html', context)
+
+def edit_recipe(request, slug):
+    item = get_object_or_404(UserRecipe, slug=slug)
+    if request.method == 'POST':
+        form = UrecipeForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect('myrecipes')
+    form = UrecipeForm(instance=item)
+    context = {
+        'item': item,
+        'form': form
+        }
+    return render(request, 'recipe_edit_user.html', context)
