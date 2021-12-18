@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.template.defaultfilters import slugify
+from django.contrib import messages
 from .models import UserRecipe
 from .forms import UrecipeForm
 
@@ -24,6 +25,7 @@ def add_recipe(request):
             new_recipe.slug = slugify(new_recipe.title)
             # print(new_recipe.slug)
             new_recipe.save()
+            messages.info(request, ('Your recipe is been CREATED successfully!'))
             return HttpResponseRedirect('/myrecipes?Submitted=True')
         else:
             form = UrecipeForm()
@@ -52,6 +54,7 @@ def edit_recipe(request, slug):
         form = UrecipeForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
+            messages.info(request, ('Your recipe is been UPDATED successfully!'))
             return redirect('myrecipes')
     form = UrecipeForm(instance=item)
     context = {
@@ -64,4 +67,5 @@ def edit_recipe(request, slug):
 def delete_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
     item.delete()
+    messages.info(request, ('Your recipe is been DELETED successfully!'))
     return redirect('myrecipes')
