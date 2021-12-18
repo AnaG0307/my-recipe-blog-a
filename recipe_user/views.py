@@ -45,6 +45,7 @@ class UrecipeDetail(View):
         }
         return render(request, 'recipe_post_user.html', context)
 
+
 def edit_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
     if request.method == 'POST':
@@ -58,3 +59,9 @@ def edit_recipe(request, slug):
         'form': form
         }
     return render(request, 'recipe_edit_user.html', context)
+
+
+def delete_recipe(request, slug):
+    item = get_object_or_404(UserRecipe, slug=slug)
+    item.delete()
+    return redirect('myrecipes')
