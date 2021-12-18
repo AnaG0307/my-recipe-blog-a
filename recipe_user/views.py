@@ -21,9 +21,7 @@ def add_recipe(request):
         form = UrecipeForm(request.POST)
         if form.is_valid():
             new_recipe = form.save(commit=False)
-            # print(new_recipe.content)
             new_recipe.slug = slugify(new_recipe.title)
-            # print(new_recipe.slug)
             new_recipe.save()
             messages.info(request, ('Your recipe is been CREATED successfully!'))
             return HttpResponseRedirect('/myrecipes?Submitted=True')
