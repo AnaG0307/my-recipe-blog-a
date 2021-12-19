@@ -12,13 +12,8 @@
     </div>
     <div class="row">
         <div class="col">
-            {% if submitted %}
 
-            Your recipe has been created succesfully!
-
-            {% else %}
-
-            <form action="" method="POST">
+            <form action="" method="POST" enctype='multipart/form-data'>
                 {% csrf_token %}
                 <div>
                     {{ form | crispy }}
@@ -28,7 +23,6 @@
                     <input type="submit" value="Submit" class="btn btn-warning btn-outline-dark w-25">
                 </center>
             </form>
-            {% endif %}
         </div>
     </div>
 

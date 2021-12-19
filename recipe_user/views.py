@@ -18,7 +18,7 @@ def add_recipe(request):
     submitted = False
     form = UrecipeForm()
     if request.method == 'POST':
-        form = UrecipeForm(request.POST)
+        form = UrecipeForm(request.POST, request.FILES)
         if form.is_valid():
             new_recipe = form.save(commit=False)
             new_recipe.slug = slugify(new_recipe.title)
