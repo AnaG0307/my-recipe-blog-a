@@ -74,5 +74,13 @@ class PostLike(View):
 
 # Code to allow user to aearch for recipes
 def search_recipe(request):
-    
-    return render(request, 'search_recipe.html')
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        searched_recipe = Recipe.objects.filter(content__contains=searched)
+        return render(request, 'search_recipe.html', {
+            'searched': searched,
+            'searched_recipe': searched_recipe
+            })
+    else:
+
+        return render(request, 'search_recipe.html')

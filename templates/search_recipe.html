@@ -4,12 +4,11 @@
 
 <!-- Results for searched recipes -->
 <div class="container-fluid">
-    <div class="row m-5">
-        <h3 class="text-center text-secondary mt-3">Your searched for...</h3>
-    </div>
     <div class="col m-5">
-        <div class="row justify-content-start mb-3">
-            {% for recipe in recipe_list %}
+        <div class="row justify-content-start m-3">
+            {% if searched %}
+            <h3 class="text-center text-secondary m-3">Your searched for "{{ searched }}"</h3>
+            {% for recipe in searched_recipe %}
             <!-- Recipe cards from Bootstrap -->
             <div class="col-lg-4 mb-5">
                 <div class="card">
@@ -47,6 +46,13 @@
             {% endif %}
             {% endfor %}
         </div>
+
+
+        {% else %}
+        <h3>Hey! Your forgot to search for a recipe...</h3>
+        {% endif %}
+
+
     </div>
 </div>
 
