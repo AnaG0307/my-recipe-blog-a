@@ -70,3 +70,9 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_post', args=[slug]))
+
+
+# Code to allow user to aearch for recipes
+def search_recipe(request):
+    
+    return render(request, 'search_recipe.html')

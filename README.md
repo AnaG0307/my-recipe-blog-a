@@ -98,11 +98,14 @@ Below are the initial wireframes for the site for both desktop screens and samll
 
 ## Testing
 
+Testing is been done manually and have gone through all the features the site provides.
 
 #### Bugs
 
 
 #### Remaining Bugs
+
+- When creating a recipe, after clicking the submit button the recipe saves and the pages redirects correctly but it takes a few seconds to do so.
 
 
 #### Validator Testing
