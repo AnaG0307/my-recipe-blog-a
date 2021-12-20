@@ -12,12 +12,7 @@
     </div>
     <div class="row">
         <div class="col">
-            {% if submitted %}
-
-            Your recipe has been created succesfully!
-
-            {% else %}
-
+            <!-- Form for the user to be able to edit their personal recipes -->
             <form action="" method="POST">
                 {% csrf_token %}
                 <div>
@@ -28,8 +23,6 @@
                     <input type="submit" value="Submit" class="btn btn-warning btn-outline-dark w-25">
                 </center>
             </form>
-            {% endif %}
-
         </div>
     </div>
 </div>

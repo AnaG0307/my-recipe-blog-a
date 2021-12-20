@@ -6,14 +6,14 @@ from django.contrib import messages
 from .models import UserRecipe
 from .forms import UrecipeForm
 
-
+# Code to render view of the content created by site user
 class UserList(generic.ListView):
     model = UserRecipe
     queryset = UserRecipe.objects.filter(public_private=0).order_by("-created_on")
     template_name = 'recipe_list_user.html'
     paginate_by = 9
 
-
+# Code to post the content of the site user's recipe
 def add_recipe(request):
     submitted = False
     form = UrecipeForm()
@@ -34,7 +34,7 @@ def add_recipe(request):
         'submitted': submitted
         })
 
-
+# Code to get the contents created by the site user
 class UrecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         new_post = get_object_or_404(UserRecipe, slug=slug)
@@ -45,7 +45,7 @@ class UrecipeDetail(View):
         }
         return render(request, 'recipe_post_user.html', context)
 
-
+#  Code to allow site user's recipes editing once a recipe is been created
 def edit_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
     if request.method == 'POST':
@@ -61,7 +61,7 @@ def edit_recipe(request, slug):
         }
     return render(request, 'recipe_edit_user.html', context)
 
-
+#  Code to allow site user's recipes to be deleted once a recipe is been created
 def delete_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
     item.delete()

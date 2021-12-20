@@ -5,6 +5,7 @@ from .models import Recipe
 from .forms import CommentForm
 
 
+# Code to render contents created by the site admin
 class Recipe_List_View(generic.ListView):
     model = Recipe
     template_name = 'index.html'
@@ -12,8 +13,9 @@ class Recipe_List_View(generic.ListView):
     paginate_by = 9
 
 
+# Code to get and post the contents created by the site admin and 
+# post the site users comments and likes on a recipe.
 class RecipePost(View):
-
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(approved=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -57,6 +59,7 @@ class RecipePost(View):
         return render(request, 'recipe_post.html', context)
 
 
+# Code to allow the site user to like/unlike a particular post
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Recipe, slug=slug)
@@ -66,20 +69,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_post', args=[slug]))
-
-# @login_required
-# def favourite_list(request):
-#     saved = Recipe.objects.filter(favourite=request.user)
-#     return render(request, 'saved_recipes.html', {
-#         'saved': saved
-#         })
-
-
-# @login_required
-# def favourite_recipe(request, slug):
-#     post = get_object_or_404(Recipe, slug=slug)
-#     if post.favourite.filter(id=request.user.id).exists():
-#         post.favourite.remove(request.user)
-#     else:
-#         post.favourite.add(request.user)
-#     return HttpResponseRedirect(request.META['HTTP_REFERER'])
