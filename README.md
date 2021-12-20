@@ -113,7 +113,8 @@ Below are the initial wireframes for the site for both desktop screens and samll
 ##### Remaining erros
 - setting.py
     - **line too long (for lines 119, 122, 125, 128 and 151):** lines can't be cut down to 79 characters because they contain paths and url names.
-
+- index.html
+    - 
 
 
 ## Technologies Used
