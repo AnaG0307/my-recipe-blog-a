@@ -6,8 +6,8 @@
     <!-- Featured recipes caroussel from Bootstrap -->
     <div class="row justify-content-center p-3 car-col">
         <div class="col-8 mb-5" style="width: 55%;">
-            <div class="row">
-                <h3 class="text-center my-4 text-secondary">Welcome to My Recipe Book!</h3>
+            <div class="row text-center">
+                <h3 class="my-4 text-secondary">Welcome to My Recipe Book</h3>
                 <p>Here you will be able to discover amazing new recipes from all around the world.</p>
                 <p>If you wish to be able to comment, like and create your own recipes all you need to do is to create
                     an account by registering and start all the fun!</p>
@@ -16,7 +16,7 @@
     </div>
     <!-- Pop up message to notify succesfull registration, login or logout -->
     <div class="row m-3 justify-content-center">
-        <div class="col-4">
+        <div class="col">
             {% if messages %}
             {% for message in messages %}
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -32,7 +32,7 @@
 <!-- All recipes index -->
 <div class="container-fluid">
     <div class="row m-5">
-        <h3 class="text-left text-secondary mt-3">Find all your new favourite recipes here:</h3>
+        <h3 class="text-center text-secondary mt-3">Find all your new favourite recipes here!</h3>
     </div>
     <div class="col m-5">
         <div class="row justify-content-start mb-3">
