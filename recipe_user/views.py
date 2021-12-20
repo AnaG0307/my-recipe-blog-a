@@ -6,12 +6,15 @@ from django.contrib import messages
 from .models import UserRecipe
 from .forms import UrecipeForm
 
+
 # Code to render view of the content created by site user
 class UserList(generic.ListView):
     model = UserRecipe
-    queryset = UserRecipe.objects.filter(public_private=0).order_by("-created_on")
+    queryset = UserRecipe.objects.filter(
+                public_private=0).order_by("-created_on")
     template_name = 'recipe_list_user.html'
     paginate_by = 9
+
 
 # Code to post the content of the site user's recipe
 def add_recipe(request):
@@ -23,7 +26,9 @@ def add_recipe(request):
             new_recipe = form.save(commit=False)
             new_recipe.slug = slugify(new_recipe.title)
             new_recipe.save()
-            messages.info(request, ('Your recipe is been CREATED successfully!'))
+            messages.info(request, (
+                'Your recipe is been CREATED successfully!')
+                )
             return HttpResponseRedirect('/myrecipes?Submitted=True')
         else:
             form = UrecipeForm()
@@ -33,6 +38,7 @@ def add_recipe(request):
         'form': form,
         'submitted': submitted
         })
+
 
 # Code to get the contents created by the site user
 class UrecipeDetail(View):
@@ -45,6 +51,7 @@ class UrecipeDetail(View):
         }
         return render(request, 'recipe_post_user.html', context)
 
+
 #  Code to allow site user's recipes editing once a recipe is been created
 def edit_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
@@ -52,7 +59,9 @@ def edit_recipe(request, slug):
         form = UrecipeForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
-            messages.info(request, ('Your recipe is been UPDATED successfully!'))
+            messages.info(request, (
+                'Your recipe is been UPDATED successfully!')
+                )
             return redirect('myrecipes')
     form = UrecipeForm(instance=item)
     context = {
@@ -61,7 +70,9 @@ def edit_recipe(request, slug):
         }
     return render(request, 'recipe_edit_user.html', context)
 
-#  Code to allow site user's recipes to be deleted once a recipe is been created
+
+# Code to allow site user's recipes to be deleted once
+# a recipe is been created
 def delete_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
     item.delete()

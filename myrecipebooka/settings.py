@@ -160,7 +160,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Code added because when registering it was showing an error message, googled error message and found the solution in this stack overflow post:
+# Code added because when registering it was showing an error message,
+# googled error message and found the solution in this stack overflow post:
 # https://stackoverflow.com/questions/57405472/connectionrefusederror-at-accounts-register
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VERIFICATION = "none"

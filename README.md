@@ -107,8 +107,12 @@ Below are the initial wireframes for the site for both desktop screens and samll
 
 #### Validator Testing
 
-- Used [PEP8online.com](http://pep8online.com/)
+- Used [PEP8online.com](http://pep8online.com/) to validate Python code
+- User [W3C](https://validator.w3.org/#validate_by_input) to validate HTML and CSS code
 
+##### Remaining erros
+- setting.py
+    - **line too long (for lines 119, 122, 125, 128 and 151):** lines can't be cut down to 79 characters because they contain paths and url names.
 
 
 
