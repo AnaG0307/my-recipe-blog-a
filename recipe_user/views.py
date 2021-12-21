@@ -23,6 +23,7 @@ def add_recipe(request):
     if request.method == 'POST':
         form = UrecipeForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.name = request.user.username
             new_recipe = form.save(commit=False)
             new_recipe.slug = slugify(new_recipe.title)
             new_recipe.save()

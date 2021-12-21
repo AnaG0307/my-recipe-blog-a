@@ -13,6 +13,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <!-- Form for the site user to be able to create their recipes -->
+            {% if user.is_authenticated %}
+            <p>Posting as: {{ user.username }}</p>
             <form action="" method="POST" enctype='multipart/form-data'>
                 {% csrf_token %}
                 <div>
@@ -23,6 +25,7 @@
                     <input type="submit" value="Submit" class="btn btn-warning btn-outline-dark">
                 </center>
             </form>
+            {% endif %}
         </div>
     </div>
 
