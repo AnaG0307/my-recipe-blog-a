@@ -4,7 +4,7 @@
 
 <!-- recipe featured image -->
 <div class="container-fluid">
-    <div class="row mx-auto p-3" style="width: 50%;">
+    <div class="row mx-auto m-3" style="width: 50%;">
         {% if "placeholder" in new_post.image.url %}
         <img src="https://res.cloudinary.com/dswmcy3pq/image/upload/v1638446796/Screenshot_2021-12-02_at_12.04.06_d3k2bp.png"
             class="card-img-top p-2" alt="...">
@@ -22,11 +22,12 @@
         </div>
     </div>
     <div class="row ps-3">
-        <div class="col-md-4">
-            <h3>Ingredients</h3>
+        <div class="col-md-4 mb-5">
+            <h5>Ingredients</h5>
             {{ new_post.ingredients_list }}
         </div>
         <div class="col-md-8">
+            <h5>Method</h5>
             {{ new_post.content | safe }}
         </div>
     </div>

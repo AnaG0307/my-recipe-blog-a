@@ -12,7 +12,7 @@
     </div>
     <!-- Pop up message for succesful creation, update or deletion of a personal recipe -->
     <div class="row m-3 justify-content-center">
-        <div class="col-4">
+        <div class="col-md-4">
             {% if messages %}
             {% for message in messages %}
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -23,7 +23,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="col">
+    <div class="col m-1">
         <div class="row justify-content-start mb-3">
             {% for recipe in userrecipe_list %}
             <!-- Recipe card from Bootstrap -->

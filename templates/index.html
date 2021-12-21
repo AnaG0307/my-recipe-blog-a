@@ -5,10 +5,9 @@
 <div class="container-fluid">
     <!-- Landing text introducing website -->
     <div class="row justify-content-center p-3 car-col">
-        <div class="col-8 mb-5" style="width: 55%;">
+        <div class="col mb-3" style="width: 55%;">
             <div class="row text-center">
                 <h3 class="my-4 text-secondary">Welcome to My Recipe Book</h3>
-                <p>Here you will be able to discover amazing new recipes from all around the world.</p>
                 <p>If you wish to be able to comment, like and create your own recipes all you need to do is to create
                     an account by registering and start all the fun!</p>
             </div>
@@ -17,10 +16,10 @@
     <!-- Pop up message to notify succesfull registration, login or logout -->
     <div class="row m-3">
         <center>
-            <div class="col">
+            <div class="col-md-4">
                 {% if messages %}
                 {% for message in messages %}
-                <div class="alert alert-success alert-dismissible fade show w-25" role="alert">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ message }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -33,17 +32,19 @@
 
 <!-- All recipes index -->
 <div class="container-fluid">
-    <div class="row m-5">
-        <h3 class="text-center text-secondary mt-3">Find all your new favourite recipes here!</h3>
-        <br>
-        <form class="d-flex mt-3 justify-content-center" method="POST" action="{% url 'search_recipe' %}">
-            {% csrf_token %}
-            <button class="btn btn-secondary m-2" type="submit">Search</button>
-            <input class="form-control me-2 m-2 w-25" type="search" placeholder="Search recipe" aria-label="Search"
-                name="searched">
-        </form>
+    <div class="row m-3 justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center text-secondary mt-3">Find all your new favourite recipes here!</h3>
+            <br>
+            <form class="d-flex mt-3" method="POST" action="{% url 'search_recipe' %}">
+                {% csrf_token %}
+                <button class="btn btn-secondary m-2" type="submit">Search</button>
+                <input class="form-control me-2 m-2" type="search" placeholder="Search recipe" aria-label="Search"
+                    name="searched">
+            </form>
+        </div>
     </div>
-    <div class="col m-5">
+    <div class="col m-1">
         <div class="row justify-content-start mb-3">
             {% for recipe in recipe_list %}
             <!-- Recipe cards from Bootstrap -->
@@ -67,13 +68,12 @@
                         <!-- comments and likes -->
                         <div class="row">
                             <div class="col-4">
-                                <i class="far fa-heart btn-like"></i> {{ recipe.number_of_likes }} Likes
+                                <i class="far fa-heart btn-like"></i> {{ recipe.number_of_likes }}
                             </div>
                         </div>
                         <!-- save & see recipe buttons -->
-                        <a href="{% url 'recipe_post' recipe.slug  %}" class="btn btn-warning btn-outline-dark m-1">See
+                        <a href="{% url 'recipe_post' recipe.slug  %}" class="btn btn-warning btn-outline-dark m-3">See
                             Recipe</a>
-                        <a href="#" class="btn btn-warning btn-outline-dark m-1">Save Recipe</a>
                     </div>
                 </div>
             </div>
