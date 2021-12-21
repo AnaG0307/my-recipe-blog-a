@@ -22,6 +22,8 @@
 My Recipe Book is been designed to facilitate keeping all the cooking recipes in one place and with easy access, allowing the site user to access their personal and family recipes safe and in one place. The site also provides the opportunity to being able to discover new recipes that the site user can save.
 
 
+
+
 ## User Stories
 
 #### User Site Stories
@@ -44,6 +46,8 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
 - As an admin User I can create, read, update and delete posts so that I can manage my site content.
 - As an admin User I can view the number of likes on each post so that I can see which ones are the most viral.
 - As an admin User I can approve/disapprove comments so that I can filter out objectionable comments.
+
+
 
 
 ## Features
@@ -80,6 +84,8 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
     The site user would be able to share their personal recipes with the rest of site users after the site admin has reviewed and authorised it.
 
 
+
+
 ### Wireframes
 Below are the initial wireframes for the site for both desktop screens and samller devices:
 
@@ -92,33 +98,49 @@ Below are the initial wireframes for the site for both desktop screens and samll
 ![Mobile](static/images/wireframe-device.png)
 
 
+
+
 ## Data Model
+
+The Entity Relationalship Database (ERD) below was created to develop this project, unfortunately due to time constraint not all the features could be developed. 
+
+There are two types of recipes: the ones created by the site user and the ones created byt the site admin. The site admin has CRUD (create, read, update and delete) access to all the recipes through the admin site but the site user only has access CRUD access to their own recipes plus can view the recipes created by the site admin.
+
+In regards of the comments, the site user is able to comment on a particular recipe and submit the comment for the site admin to approve.
+
+The [Future Features](#Future-Features) have been described in the ERD as well.
+
 
 ![ERD Diagram](/static/images/database-diagram.png)
 
+
+
+
 ## Testing
 
-Testing is been done manually and have gone through all the features the site provides.
-
-#### Bugs
+Testing is been done manually and have gone through all the features the site provides for all types of screens, from small to desktop screens. All the features responding as expected with the exceptions explained below.
 
 
 #### Remaining Bugs
 
-- When creating a recipe, after clicking the submit button the recipe saves and the pages redirects correctly but it takes a few seconds to do so.
+- When creating a recipe (as site user using Add Recipe in the navbar), after clicking the submit button the recipe saves and the pages redirects correctly but it takes a several seconds to do so.
 - When editing a recipe the text can be edited, however when attempting to change the image it is not updated. Haven't been able to fix the issue due to submitting time constraints.
 
 
 #### Validator Testing
 
-- Used [PEP8online.com](http://pep8online.com/) to validate Python code
+- Used [PEP8online.com](http://pep8online.com/) to validate Python code.
 - User [W3C](https://validator.w3.org/#validate_by_input) to validate HTML and CSS code
 
+
 ##### Remaining erros
-- setting.py
+- **setting.py**
     - **line too long (for lines 119, 122, 125, 128 and 151):** lines can't be cut down to 79 characters because they contain paths and url names.
-- index.html
-    - 
+- **base.html:**
+    - Parse error for </html> tag encountered but could not find a solution for it as I believe it is due to the base.html file loading and creating the error. On the file itself the code seems to be correct. I have searched a solution through the internet and asked through the different course channels but no solution found.
+    ![Parse Error](/static/images/validation-error.png)
+
+
 
 
 ## Technologies Used
@@ -131,7 +153,12 @@ Testing is been done manually and have gone through all the features the site pr
 - [Cloudinary](https://cloudinary.com/)
 - [Django](https://www.djangoproject.com/)
 - [Heroku](https://id.heroku.com/)
-- [Balsamiq]()
+- [Balsamiq](https://balsamiq.cloud/)
+- [PEP8online.com](http://pep8online.com/)
+- [W3C](https://validator.w3.org/#validate_by_input)
+- [Stackoverflow](https://stackoverflow.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
 
 
 ## Deployment
@@ -159,5 +186,6 @@ The project is been deployed to Heroku. Steps for deployment:
 
 ## Credits
 
+I would like to thank everyone that has supported me during the development of this project. To my family and friends for cheering me up to keep going and to my mentor Chris for guiding me through the requirements and provide me with good tips and advice.
 
 [Back to Top ⇧](#My-Recipe-Book) 
