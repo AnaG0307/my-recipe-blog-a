@@ -14,8 +14,7 @@
         </div>
     </div>
     <!-- Pop up message to notify succesfull registration, login or logout -->
-    <div class="row m-3">
-        <center>
+    <div class="row m-3 justify-content-center">
             <div class="col-md-4">
                 {% if messages %}
                 {% for message in messages %}
@@ -26,7 +25,6 @@
                 {% endfor %}
                 {% endif %}
             </div>
-        </center>
     </div>
 </div>
 
@@ -68,7 +66,7 @@
                         <!-- comments and likes -->
                         <div class="row">
                             <div class="col-4">
-                                <i class="far fa-heart btn-like"></i> {{ recipe.number_of_likes }}
+                                <i class="fas fa-heart btn-like"></i> {{ recipe.number_of_likes }}
                             </div>
                         </div>
                         <!-- save & see recipe buttons -->

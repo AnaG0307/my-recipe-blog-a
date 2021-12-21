@@ -106,6 +106,7 @@ Testing is been done manually and have gone through all the features the site pr
 #### Remaining Bugs
 
 - When creating a recipe, after clicking the submit button the recipe saves and the pages redirects correctly but it takes a few seconds to do so.
+- When editing a recipe the text can be edited, however when attempting to change the image it is not updated. Haven't been able to fix the issue due to submitting time constraints.
 
 
 #### Validator Testing

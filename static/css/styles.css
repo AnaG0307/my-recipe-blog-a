@@ -16,10 +16,3 @@ a:hover {
     border: none;
     background: transparent;
 }
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
