@@ -15,17 +15,19 @@
         </div>
     </div>
     <!-- Pop up message to notify succesfull registration, login or logout -->
-    <div class="row m-3 justify-content-center">
-        <div class="col">
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="row m-3">
+        <center>
+            <div class="col">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show w-25" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
             </div>
-            {% endfor %}
-            {% endif %}
-        </div>
+        </center>
     </div>
 </div>
 
@@ -37,7 +39,8 @@
         <form class="d-flex mt-3 justify-content-center" method="POST" action="{% url 'search_recipe' %}">
             {% csrf_token %}
             <button class="btn btn-secondary m-2" type="submit">Search</button>
-            <input class="form-control me-2 m-2 w-25" type="search" placeholder="Search recipe" aria-label="Search" name="searched">
+            <input class="form-control me-2 m-2 w-25" type="search" placeholder="Search recipe" aria-label="Search"
+                name="searched">
         </form>
     </div>
     <div class="col m-5">
