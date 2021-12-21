@@ -5,6 +5,12 @@ from cloudinary.models import CloudinaryField
 
 class UserRecipe(models.Model):
     name = models.CharField(max_length=50)
+    author_user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=True
+        )
     email = models.EmailField(max_length=100)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
