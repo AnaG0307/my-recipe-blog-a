@@ -120,6 +120,14 @@ The [Future Features](#Future-Features) have been described in the ERD as well.
 
 Testing is been done manually and have gone through all the features the site provides for all types of screens, from small to desktop screens. All the features responding as expected with the exceptions explained below.
 
+- Login/logout/register: the user can use all this features with no errors, pop up messages appearing as well.
+- Search bar: working and showing all the recipes with the searched words, if search button is clicked a message stating so appears.
+- Recipe list: a list created from both, site and admin user, appears on their designated html file. All the links are clickable and fully functional ('see reipe', 'edit', 'delete')
+- Recipe details: the recipes created from both, site and admin user, can be accessed in detail. For the admin user recipes the like button is fully funcitonal and the reicpe can be liked/unliked.
+- Comments: the comments section in the recipes created by the site admin works as expected, if registered the users can post comments, and the site admin can check those comments and approve them before been public.
+- Add recipe: if registered, the site user can create their own recipe, see them in a list in "My Recipes", update the content created or delete it.
+- Navbar and footer: all the links in the footer and navbar working as expected, no broken links.
+
 
 #### Remaining Bugs
 
