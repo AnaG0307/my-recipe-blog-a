@@ -66,11 +66,11 @@
 <div class="container-fluid">
     <div class="row p-5 car-col">
         <div class="col">
-            <h4>Comments:</h4>
+            <h4>Comments</h4>
             {% for comment in comments %}
             <div>
-                <p>{{ comment.name }}</p>
-                <p>{{ comment.content | linebreaks }}</p>
+                <p class="font-weight-bold">By: {{ comment.name }}</p>
+                <p>{{ comment.content }}</p>
             </div>
             {% endfor %}
             <p></p>
@@ -85,7 +85,7 @@
                 {% else %}
                 {% if user.is_authenticated %}
                 <h4>Post your comment here:</h4>
-                <p>Your username: {{ user.username }}</p>
+                <p>Your are posting as {{ user.username }}</p>
                 <form method="post">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
