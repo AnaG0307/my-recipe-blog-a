@@ -57,7 +57,7 @@
                         <h3 class="card-title">{{ recipe.title }}</h3>
                         <h5>Created by: {{ recipe.author }}</h5>
                         <!-- excerpt -->
-                        <p class="card-text">{{ recipe.excerpt | safe }}</p>
+                        <div class="card-text">{{ recipe.excerpt | safe }}</div>
                         <!-- difficulty and cooking time -->
                         <p><i class="fas fa-dumbbell"></i> Difficulty: {{ recipe.difficulty }}</p>
                         <p><i class="fas fa-clock"></i> Cooking Time: {{ recipe.time }}</p>
@@ -90,12 +90,12 @@
         {% if page_obj.has_previous %}
         <li class="page-item m-1">
             <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
-                aria-label="Previous">&laquoPrevious</a>
+                aria-label="Previous">&laquo;Previous</a>
         </li>
         {% endif %}
         {% if page_obj.has_next %}
         <li class="page-item m-1">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label=" Next">Next &raquo</a>
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label=" Next">Next &raquo;</a>
         </li>
         {% endif %}
     </ul>
