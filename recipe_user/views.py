@@ -15,6 +15,9 @@ class UserList(generic.ListView):
     template_name = 'recipe_list_user.html'
     paginate_by = 9
 
+    def get_queryset(self):
+        return UserRecipe.objects.filter(author_user=self.request.user)
+
 
 # Code to post the content of the site user's recipe
 def add_recipe(request):
@@ -23,8 +26,8 @@ def add_recipe(request):
     if request.method == 'POST':
         form = UrecipeForm(request.POST, request.FILES)
         if form.is_valid():
-            form.instance.name = request.user.username
             new_recipe = form.save(commit=False)
+            new_recipe.author_user = request.user
             new_recipe.slug = slugify(new_recipe.title)
             new_recipe.save()
             messages.info(request, (
@@ -57,7 +60,7 @@ class UrecipeDetail(View):
 def edit_recipe(request, slug):
     item = get_object_or_404(UserRecipe, slug=slug)
     if request.method == 'POST':
-        form = UrecipeForm(request.POST, instance=item)
+        form = UrecipeForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
             form.save()
             messages.info(request, (
