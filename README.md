@@ -178,17 +178,23 @@ The project is been deployed to Heroku. Steps for deployment:
     - Create a new app in Heroku: choose a unique name and region;
     - Introduce sensitive data needed to be kept secret from the config Var tab in env.py and attach the database (Cloudinary url, Database url and Secret Key);
     - Add necessary buildpacks: Python;
-    - Prepare environment and settings.py file by referencing env.py and link the database variable on Heroku:
+    - Prepare environment and settings.py file by referencing env.py and link the database variable on Heroku;
     - Migarte all the changes;
     - Get all static and media files stored in Cloudinary by adding the cloudinary url in env.py and in Heroku, add Cloudinary to settings.py as well as telling Django, link the file to the templates in Heroku and allow Heroku as a host in Allowed_Hosts;
     - In Gitpod create the media, static and templates directories;
     - Add the project name in Procfile;
     - Make deployment commit in the terminal;
-    - Manually deploy content through Heroku 
+    - Manually deploy content through Heroku;
     - For deployment method, GitHub was selected and confirmed we want to connect to GitHub;
     - Connect Heroku to the repository for My Recipe Blog a;
     - Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
     - Click on Deploy.
+    - For final deployment:
+        - On setting.py set Default = False;
+        - Below add X_FRAME_OPTIONS = 'SAMEORIGIN';
+        - Commit and push the changes in the terminal;
+        - In Heroku in setting tab remove the DISABLE_COLLECTSTATIC variable;
+        - Go to the deploy tab and click on deploy branch.
 
 
 
