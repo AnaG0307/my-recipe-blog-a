@@ -19,7 +19,7 @@
 
 ## About
 
-My Recipe Book is been designed to facilitate keeping all the cooking recipes in one place and with easy access, allowing the site user to access their personal and family recipes safe and in one place. The site also provides the opportunity to being able to discover new recipes that the site user can save.
+My Recipe Book is been designed to facilitate keeping all the cooking recipes in one place and with easy access, allowing the site user to access their personal and family recipes safe and in one place. The site also provides the opportunity to being able to discover new recipes.
 
 
 
@@ -31,11 +31,11 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
 - As a Site User I can register an account so that I can comment and like a past.
 - As a Site User I can view a list of posts so that I can select one to read.
 - As a Site User I can view the number of likes on each post so that I can see which ones are the most viral.
-- As a Site User I can click on a post so othat I can read the full text.
+- As a Site User I can click on a post so that I can read the full text.
 - As a Site User I can view a paginated list of posts so that I can easily select a post to view.
 - As a Site User I can leave comments on a post so that I can be involved in the conversation. 
 - As a Site User I can view comments on an individual post so that I can read the conversation.
-- As a Site User I can create and save my personal recipes so that I have all my recipe in the same place.
+- As a Site User I can create and save my personal recipes so that I have all my recipes in the same place.
 - As a Site User I can use the "search" bar so that I can easily find recipes I am looking for.
 
 
@@ -46,6 +46,7 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
 - As an admin User I can create, read, update and delete posts so that I can manage my site content.
 - As an admin User I can view the number of likes on each post so that I can see which ones are the most viral.
 - As an admin User I can approve/disapprove comments so that I can filter out objectionable comments.
+- As an admin User I can see the personal recipes of all the user so I can have an idea how they are using the site.
 
 
 
@@ -58,7 +59,7 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
     - When logged in, the site user can access the logout page, the form page to create a recipe and the page where all his/her recipes are stored in "My Recipes". 
 
 - **Footer:** (available through all the pages on the site)
-    The site user can access the different social media pages the site has an account with as well as accessing the About page and go back to the Home page.
+    The site user can access the different social media pages the site has an account with as well as accessing a link to go back to the Home page.
 
 -**Home Page:**
     From here the site user can access the list of recipes created by the Site Admin. All the recipes has an image, recipe title, recipe, excerpt to know a little more about the recipe, level of difficulty, cooking time and how many likes it has. If wished the site user can click on "See Recipe" and access all the details for the recipe with all the steps and ingredients needed.
@@ -73,13 +74,13 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
     The page holds all the recipes the registered site user has created as a list. From here the recipes can be seen, edited or deleted if wished by the site user.
 
 - **Admin Site:**
-    Can be accessed by adding /admin on the browser at the end of the site url. From there the admin user have access to all the users details and their personal recipes, can create content for the site, regulate comments by approving or dismissing them. The information on the site can also be filtered for easy search, among other options.
+    Can be accessed by adding "/admin" on the browser at the end of the site url. From there the admin user have access to all the users details and their personal recipes, can create content for the site, regulate comments by approving or dismissing them. The information on the site can also be filtered for easy search, among other options.
     To access the admin site the username is "Ana" and the password "myrecipebook".
 
 
 #### Future Features
--**My Calendar:**
-    The site user will be able to save the recipes they would like to cook and specify when to orh¡ganise their weekly meals.
+- **My Calendar:**
+    The site user will be able to save the recipes they would like to cook and specify when to organise their weekly meals.
 
 - **My Shopping List:**
     The site user would be able to create a shopping list based on the recipes they would like to cook during the week and specify the quantities that needs to be bought.
@@ -91,7 +92,7 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
 
 
 ### Wireframes
-Below are the initial wireframes for the site for both desktop screens and samller devices:
+Below are the initial wireframes for the site for both desktop screens and smaller devices:
 
 **Desktop screens**
 
@@ -122,11 +123,11 @@ The [Future Features](#Future-Features) have been described in the ERD as well.
 
 ## Testing
 
-Testing is been done manually and have gone through all the features the site provides for all types of screens, from small to desktop screens. All the features responding as expected with the exceptions explained below.
+Testing is been done manually and have gone through all the features the site provides for all types of screens, from small to desktop screens. All the features responding as expected with the exceptions explained below in Remaining Bugs.
 
 - Login/logout/register: the user can use all this features with no errors, pop up messages appearing as well.
 - Search bar: working and showing all the recipes with the searched words, if search button is clicked a message stating so appears.
-- Recipe list: a list created from both, site and admin user, appears on their designated html file. All the links are clickable and fully functional ('see reipe', 'edit', 'delete')
+- Recipe list: a list created from both, site and admin user, appears on their designated html file. All the links are clickable and fully functional ('see reipe', 'edit', 'delete').
 - Recipe details: the recipes created from both, site and admin user, can be accessed in detail. For the admin user recipes the like button is fully funcitonal and the reicpe can be liked/unliked.
 - Comments: the comments section in the recipes created by the site admin works as expected, if registered the users can post comments, and the site admin can check those comments and approve them before been public.
 - Add recipe: if registered, the site user can create their own recipe, see them in a list in "My Recipes", update the content created or delete it.
@@ -136,8 +137,8 @@ Testing is been done manually and have gone through all the features the site pr
 #### Remaining Bugs
 
 - When creating a recipe (as site user using Add Recipe in the navbar), after clicking the submit button the recipe saves and the pages redirects correctly but it takes a several seconds to do so.
-- When editing a recipe the text can be edited, however when attempting to change the image it is not updated. Haven't been able to fix the issue due to submitting time constraints.
-- On smaller screens, when creating a personal recipe, the column overflows to the left due to the "add image" option been too large. I have tried to fix it but couldn't be fixed due to time constraints. The form is created using crispy forms and created automatically.
+- When editing a recipe as a site user the text can be edited, however when attempting to change the image it is not updated. Haven't been able to fix the issue due to submitting time constraints.
+- On smaller screens, when creating a personal recipe, the column overflows to the left due to the "add image" box option been too large. I have tried to fix it but couldn't due to time constraints. The form is created using crispy forms and created automatically.
 
 
 #### Validator Testing
