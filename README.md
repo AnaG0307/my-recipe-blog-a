@@ -75,7 +75,6 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
 
 - **Admin Site:**
     Can be accessed by adding "/admin" on the browser at the end of the site url. From there the admin user have access to all the users details and their personal recipes, can create content for the site, regulate comments by approving or dismissing them. The information on the site can also be filtered for easy search, among other options.
-    To access the admin site the username is "Ana" and the password "myrecipebook".
 
 
 #### Future Features
