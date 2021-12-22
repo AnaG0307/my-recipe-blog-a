@@ -70,7 +70,11 @@ My Recipe Book is been designed to facilitate keeping all the cooking recipes in
     If registered the site user can access the form to create their own personal recipes, which are stored in the backend.
 
 - **My Recipes:**
-    The page holds all the recipes the registered site user has created as a list. From here the recipes can be seen, edited or deleted if wished by the site user. 
+    The page holds all the recipes the registered site user has created as a list. From here the recipes can be seen, edited or deleted if wished by the site user.
+
+- **Admin Site:**
+    Can be accessed by adding /admin on the browser at the end of the site url. From there the admin user have access to all the users details and their personal recipes, can create content for the site, regulate comments by approving or dismissing them. The information on the site can also be filtered for easy search, among other options.
+    To access the admin site the username is "Ana" and the password "myrecipebook".
 
 
 #### Future Features
@@ -133,6 +137,7 @@ Testing is been done manually and have gone through all the features the site pr
 
 - When creating a recipe (as site user using Add Recipe in the navbar), after clicking the submit button the recipe saves and the pages redirects correctly but it takes a several seconds to do so.
 - When editing a recipe the text can be edited, however when attempting to change the image it is not updated. Haven't been able to fix the issue due to submitting time constraints.
+- On smaller screens, when creating a personal recipe, the column overflows to the left due to the "add image" option been too large. I have tried to fix it but couldn't be fixed due to time constraints. The form is created using crispy forms and created automatically.
 
 
 #### Validator Testing
@@ -200,6 +205,6 @@ The project is been deployed to Heroku. Steps for deployment:
 
 ## Credits
 
-I would like to thank everyone that has supported me during the development of this project. To my family and friends for cheering me up to keep going and to my mentor Chris for guiding me through the requirements and provide me with good tips and advice.
+I would like to thank everyone that has supported me during the development of this project. To my family and friends for cheering me up to keep going, to my mentor Chris for guiding me through the requirements and provide me with good tips and advice and to the tutoring team at Code Institute for supporting me troubleshooting and learning how to solve issues appearing on the way.
 
 [Back to Top ⇧](#My-Recipe-Book) 
