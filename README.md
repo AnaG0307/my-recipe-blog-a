@@ -149,6 +149,8 @@ Testing is been done manually and have gone through all the features the site pr
 ##### Remaining erros
 - **setting.py**
     - **line too long (for lines 119, 122, 125, 128 and 151):** lines can't be cut down to 79 characters because they contain paths and url names.
+- **env.py**
+    - **line too long (for lines 3 and 5):** lines can't be cut down to 79 characters because they contain url names.
 - **base.html:**
     - Parse error for </html> tag encountered but could not find a solution for it as I believe it is due to the base.html file loading and creating the error. On the file itself the code seems to be correct. I have searched a solution through the internet and asked through the different course channels but no solution found.
     ![Parse Error](/static/images/validation-error.png)
@@ -195,11 +197,11 @@ The project is been deployed to Heroku. Steps for deployment:
     - Set "Enable Automatic Deploys" to allow automatic deployments every time the code is pushed;
     - Click on Deploy.
     - For final deployment:
-        - On setting.py set Default = False;
+        - In settings.py set Default = False;
         - Below add X_FRAME_OPTIONS = 'SAMEORIGIN';
         - Commit and push the changes in the terminal;
-        - In Heroku in setting tab remove the DISABLE_COLLECTSTATIC variable;
-        - Go to the deploy tab and click on deploy branch.
+        - In Heroku, in the settings tab remove the DISABLE_COLLECTSTATIC variable;
+        - In Heroku, go to the deploy tab and click on deploy branch.
 
 
 
