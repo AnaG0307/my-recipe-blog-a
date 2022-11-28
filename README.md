@@ -2,7 +2,7 @@
 
 ![App page screenshot](static/images/screenshot.png)
 
-[View the app in Heroku here](https://my-recipe-book-a.herokuapp.com/)
+[View the app in Render here](https://my-recipe-book-p4.onrender.com)
 
 ## Table of Contents
 
@@ -13,7 +13,8 @@
 5. [Testing](#Testing)
 6. [Technologies Used](#Technologies-Used)
 7. [Deployment](#Deployment)
-8. [Credits](#Credits)
+8. [Redeployment](#Redeployment)
+9. [Credits](#Credits)
 
 
 
@@ -203,6 +204,9 @@ The project is been deployed to Heroku. Steps for deployment:
         - In Heroku, in the settings tab remove the DISABLE_COLLECTSTATIC variable;
         - In Heroku, go to the deploy tab and click on deploy branch.
 
+## Redeployment
+
+Site redeployed to Render due to Heroku not having a free plan anymore
 
 
 ## Credits
